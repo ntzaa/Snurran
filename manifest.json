@@ -1,0 +1,10 @@
+{
+  "name": "SNURRAN",
+  "short_name": "SNURRAN",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#1b1b1b",
+  "theme_color": "#b08d57",
+  "orientation": "portrait",
+  "icons": []
+}
