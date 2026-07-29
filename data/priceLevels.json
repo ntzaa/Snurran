@@ -1,0 +1,17 @@
+[
+    {
+        "id":"billig",
+        "namn":"Billig",
+        "symbol":"$"
+    },
+    {
+        "id":"mellan",
+        "namn":"Mellan",
+        "symbol":"$$"
+    },
+    {
+        "id":"dyr",
+        "namn":"Dyr",
+        "symbol":"$$$"
+    }
+]

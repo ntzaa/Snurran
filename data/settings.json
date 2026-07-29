@@ -1,0 +1,13 @@
+{
+    "googlePlaces":true,
+
+    "visaBilder":true,
+
+    "visaOppettider":true,
+
+    "visaBetyg":true,
+
+    "visaRecensioner":true,
+
+    "version":"1.0"
+}

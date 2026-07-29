@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNURREN</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="spinner.css">
+</head>
+
+<body>
+
+
+    <div id="menuButton">
+
+    ☰
+
+</div>
+
+<nav id="sideMenu">
+
+    <div id="closeButton">
+        ✕
+    </div>
+
+    
+
+   <ul>
+
+    <li id="homeButton">🏠 Startsida</li>
+
+    <li id="settingsButton">⚙ Inställningar</li>
+
+    <li>⭐ Favoriter</li>
+
+    <li>🕘 Historik</li>
+
+    <li>ℹ Om</li>
+
+</ul>
+
+</nav>
+
+
+<div id="overlay"></div>
+
+<div id="app">
+
+    <!-- ===============================
+         Startsida
+    ================================ -->
+
+    <div id="homeView" class="view active">
+
+        <div class="container">
+
+            <h1>SNURRAN</h1>
+
+            <p class="subtitle">
+                Kan ni inte bestämma er?
+            </p>
+
+
+                <div class="display">
+
+    <div class="winnerArrow left"></div>
+
+    <div id="spinnerWindow">
+
+        <div class="spinnerFade top"></div>
+
+        <div id="focusFrame"></div>
+
+        <div id="spinnerList"></div>
+
+        <div id="spinnerLens"></div>
+
+        <div class="spinnerFade bottom"></div>
+
+    </div>
+
+    <div class="winnerArrow right"></div>
+
+</div>
+
+            <button id="randomButton">
+
+                SNURRA
+
+            </button>
+
+        </div>
+
+    </div> <!-- homeView -->
+
+
+    <!-- ===============================
+         Inställningar
+    ================================ -->
+
+    <div id="settingsView" class="view">
+
+    <div class="pageContent">
+
+        <div class="pageHeader">
+
+            <button id="settingsBackButton" class="backButton">
+                ← Tillbaka
+            </button>
+
+            <h1>Inställningar</h1>
+
+            <p class="subtitle">
+                Anpassa hur Snurren fungerar.
+            </p>
+
+        </div>
+
+        <div class="settingsCard">
+
+            <h3>Typ av ställe</h3>
+
+            <label>
+                <input type="checkbox" id="typePub" checked>
+                Pub
+            </label>
+
+            <label>
+                <input type="checkbox" id="typeBar" checked>
+                Bar
+            </label>
+
+            <label>
+                <input type="checkbox" id="typeRestaurant" checked>
+                Restaurang
+            </label>
+
+            <label>
+                <input type="checkbox" id="typeCocktail" checked>
+                Cocktailbar
+            </label>
+
+            <label>
+                <input type="checkbox" id="typeWine" checked>
+                Vinbar
+            </label>
+
+            <label>
+                <input type="checkbox" id="typeNightclub" checked>
+                Nattklubb
+            </label>
+
+        </div>
+
+    </div>
+
+</div> <!-- settingsView -->
+
+   <!-- ===============================
+         Restaurangvy
+    ================================ -->
+
+<div id="venueView" class="view">
+
+    <div class="pageContent">
+
+        <div class="pageHeader">
+
+            <button id="venueBackButton" class="backButton">
+                ← Tillbaka
+            </button>
+
+            <h1 id="venueTitle">
+                Restaurang
+            </h1>
+
+        </div>
+
+        <div class="settingsCard">
+
+            <p id="venueDescription">
+                Här kommer information om restaurangen.
+            </p>
+
+        </div>
+
+    </div>
+
+</div> <!-- venueView -->
+
+</div> <!-- app -->
+
+<script src="spinner.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

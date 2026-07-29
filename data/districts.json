@@ -1,0 +1,26 @@
+[
+    {
+        "id": "sodermalm",
+        "namn": "Södermalm"
+    },
+    {
+        "id": "gamla_stan",
+        "namn": "Gamla stan"
+    },
+    {
+        "id": "norrmalm",
+        "namn": "Norrmalm"
+    },
+    {
+        "id": "ostermalm",
+        "namn": "Östermalm"
+    },
+    {
+        "id": "kungsholmen",
+        "namn": "Kungsholmen"
+    },
+    {
+        "id": "vasastan",
+        "namn": "Vasastan"
+    }
+]

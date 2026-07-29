@@ -1,0 +1,62 @@
+[
+    {
+        "grupp": "Dryck",
+        "taggar": [
+            "öl",
+            "cocktail",
+            "vin",
+            "whisky",
+            "gin",
+            "rom",
+            "naturvin"
+        ]
+    },
+    {
+        "grupp": "Mat",
+        "taggar": [
+            "pizza",
+            "burgare",
+            "asiatiskt",
+            "vegetariskt",
+            "skaldjur",
+            "brunch",
+            "dessert"
+        ]
+    },
+    {
+        "grupp": "Miljö",
+        "taggar": [
+            "takbar",
+            "uteservering",
+            "utsikt",
+            "speakeasy",
+            "historiskt",
+            "trendigt",
+            "romantiskt",
+            "mysigt",
+            "lyxigt"
+        ]
+    },
+    {
+        "grupp": "Aktiviteter",
+        "taggar": [
+            "livemusik",
+            "quiz",
+            "karaoke",
+            "sport",
+            "dans"
+        ]
+    },
+    {
+        "grupp": "Passar för",
+        "taggar": [
+            "afterwork",
+            "dejt",
+            "kompisar",
+            "familj",
+            "turister",
+            "student",
+            "större sällskap"
+        ]
+    }
+]

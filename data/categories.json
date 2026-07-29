@@ -1,0 +1,47 @@
+[
+    {
+        "id":"cocktail",
+        "ikon":"🍸",
+        "namn":"Cocktail"
+    },
+    {
+        "id":"ol",
+        "ikon":"🍺",
+        "namn":"Öl"
+    },
+    {
+        "id":"vin",
+        "ikon":"🍷",
+        "namn":"Vin"
+    },
+    {
+        "id":"whisky",
+        "ikon":"🥃",
+        "namn":"Whisky"
+    },
+    {
+        "id":"livemusik",
+        "ikon":"🎵",
+        "namn":"Livemusik"
+    },
+    {
+        "id":"takbar",
+        "ikon":"🌇",
+        "namn":"Takbar"
+    },
+    {
+        "id":"sport",
+        "ikon":"⚽",
+        "namn":"Sport"
+    },
+    {
+        "id":"afterwork",
+        "ikon":"🍻",
+        "namn":"After Work"
+    },
+    {
+        "id":"dejt",
+        "ikon":"❤️",
+        "namn":"Perfekt för dejt"
+    }
+]

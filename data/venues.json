@@ -1,0 +1,1785 @@
+[
+  {
+    "id": 1,
+    "slug": "kellys",
+    "namn": "Kellys",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "budget",
+      "afterwork",
+      "sport"
+    ],
+    "pris": "billig",
+    "stadsdel": "sodermalm",
+    "adress": "Folkungagatan 49",
+    "mapsQuery": "Kellys Stockholm",
+    "koordinater": {
+      "lat": 59.3145,
+      "lng": 18.0763
+    }
+  },
+  {
+    "id": 2,
+    "slug": "akkurat",
+    "namn": "Akkurat",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "whisky",
+      "afterwork"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsgatan 18",
+    "mapsQuery": "Akkurat Stockholm",
+    "koordinater": {
+      "lat": 59.3195,
+      "lng": 18.0687
+    }
+  },
+  {
+    "id": 3,
+    "slug": "oliver-twist",
+    "namn": "Oliver Twist",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "whisky"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Repslagargatan 6",
+    "mapsQuery": "Oliver Twist Stockholm",
+    "koordinater": {
+      "lat": 59.315,
+      "lng": 18.0755
+    }
+  },
+  {
+    "id": 4,
+    "slug": "the-flying-horse",
+    "namn": "The Flying Horse",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "sport"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Odengatan 44",
+    "mapsQuery": "The Flying Horse Stockholm",
+    "koordinater": {
+      "lat": 59.3435,
+      "lng": 18.0494
+    }
+  },
+  {
+    "id": 5,
+    "slug": "wirstroms-pub",
+    "namn": "Wirströms Pub",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "gamla_stan",
+    "adress": "Stora Nygatan 13",
+    "mapsQuery": "Wirströms Pub Stockholm",
+    "koordinater": {
+      "lat": 59.3242,
+      "lng": 18.068
+    }
+  },
+  {
+    "id": 6,
+    "slug": "the-liffey",
+    "namn": "The Liffey",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "gamla_stan",
+    "adress": "Stora Nygatan 40",
+    "mapsQuery": "The Liffey Stockholm",
+    "koordinater": {
+      "lat": 59.3235,
+      "lng": 18.067
+    }
+  },
+  {
+    "id": 7,
+    "slug": "queens-head",
+    "namn": "The Queen's Head",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "quiz"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "Drottningholmsvägen 108",
+    "mapsQuery": "The Queen's Head Stockholm",
+    "koordinater": {
+      "lat": 59.333,
+      "lng": 18.029
+    }
+  },
+  {
+    "id": 8,
+    "slug": "man-in-the-moon",
+    "namn": "Man in the Moon",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "whisky"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Tegnérgatan 2C",
+    "mapsQuery": "Man in the Moon Stockholm",
+    "koordinater": {
+      "lat": 59.3399,
+      "lng": 18.0535
+    }
+  },
+  {
+    "id": 9,
+    "slug": "tjoget",
+    "namn": "Tjoget",
+    "kategori": "bar",
+    "tags": [
+      "cocktail",
+      "trendigt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsbruksgatan 24",
+    "mapsQuery": "Tjoget Stockholm",
+    "koordinater": {
+      "lat": 59.3172,
+      "lng": 18.0346
+    }
+  },
+  {
+    "id": 10,
+    "slug": "pharmarium",
+    "namn": "Pharmarium",
+    "kategori": "bar",
+    "tags": [
+      "cocktail",
+      "historiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "gamla_stan",
+    "adress": "Stortorget 7",
+    "mapsQuery": "Pharmarium Stockholm",
+    "koordinater": {
+      "lat": 59.3248,
+      "lng": 18.0705
+    }
+  },
+  {
+    "id": 11,
+    "slug": "lucys-flower-shop",
+    "namn": "Lucy's Flower Shop",
+    "kategori": "bar",
+    "tags": [
+      "cocktail",
+      "speakeasy"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Birger Jarlsgatan 20",
+    "mapsQuery": "Lucy's Flower Shop Stockholm",
+    "koordinater": {
+      "lat": 59.336,
+      "lng": 18.0726
+    }
+  },
+  {
+    "id": 12,
+    "slug": "a-bar-called-gemma",
+    "namn": "A Bar Called Gemma",
+    "kategori": "bar",
+    "tags": [
+      "cocktail",
+      "trendigt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "ostermalm",
+    "adress": "Grev Turegatan 30",
+    "mapsQuery": "A Bar Called Gemma Stockholm",
+    "koordinater": {
+      "lat": 59.3386,
+      "lng": 18.0755
+    }
+  },
+  {
+    "id": 13,
+    "slug": "roda-huset",
+    "namn": "Röda Huset",
+    "kategori": "bar",
+    "tags": [
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Malmtorgsgatan 5",
+    "mapsQuery": "Röda Huset Stockholm",
+    "koordinater": {
+      "lat": 59.3318,
+      "lng": 18.0658
+    }
+  },
+  {
+    "id": 14,
+    "slug": "herno-gin-bar",
+    "namn": "Hernö Gin Bar",
+    "kategori": "bar",
+    "tags": [
+      "gin",
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Sveavägen 41",
+    "mapsQuery": "Hernö Gin Bar Stockholm",
+    "koordinater": {
+      "lat": 59.3385,
+      "lng": 18.0586
+    }
+  },
+  {
+    "id": 15,
+    "slug": "coquetel-social",
+    "namn": "Coquetel Social",
+    "kategori": "bar",
+    "tags": [
+      "cocktail"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Norrlandsgatan 24",
+    "mapsQuery": "Coquetel Social Stockholm",
+    "koordinater": {
+      "lat": 59.3346,
+      "lng": 18.0736
+    }
+  },
+  {
+    "id": 16,
+    "slug": "gondolen",
+    "namn": "Gondolen",
+    "kategori": "restaurang",
+    "tags": [
+      "utsikt",
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "sodermalm",
+    "adress": "Katarinavägen 38",
+    "mapsQuery": "Gondolen Stockholm",
+    "koordinater": {
+      "lat": 59.3192,
+      "lng": 18.0728
+    }
+  },
+  {
+    "id": 17,
+    "slug": "tak",
+    "namn": "Tak",
+    "kategori": "restaurang",
+    "tags": [
+      "takbar",
+      "cocktail",
+      "utsikt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Brunkebergstorg 2-4",
+    "mapsQuery": "Tak Stockholm",
+    "koordinater": {
+      "lat": 59.3325,
+      "lng": 18.0676
+    }
+  },
+  {
+    "id": 18,
+    "slug": "riche",
+    "namn": "Riche",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt",
+      "lyx"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Birger Jarlsgatan 4",
+    "mapsQuery": "Riche Stockholm",
+    "koordinater": {
+      "lat": 59.3337,
+      "lng": 18.0738
+    }
+  },
+  {
+    "id": 19,
+    "slug": "pelikan",
+    "namn": "Pelikan",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt",
+      "historiskt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Blekingegatan 40",
+    "mapsQuery": "Pelikan Stockholm",
+    "koordinater": {
+      "lat": 59.3134,
+      "lng": 18.0814
+    }
+  },
+  {
+    "id": 20,
+    "slug": "tranan",
+    "namn": "Tranan",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Karlbergsvägen 14",
+    "mapsQuery": "Tranan Stockholm",
+    "koordinater": {
+      "lat": 59.3413,
+      "lng": 18.0498
+    }
+  },
+  {
+    "id": 21,
+    "slug": "sturehof",
+    "namn": "Sturehof",
+    "kategori": "restaurang",
+    "tags": [
+      "skaldjur"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Stureplan 2",
+    "mapsQuery": "Sturehof Stockholm",
+    "koordinater": {
+      "lat": 59.3358,
+      "lng": 18.0739
+    }
+  },
+  {
+    "id": 22,
+    "slug": "tennstopet",
+    "namn": "Tennstopet",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt",
+      "historiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Dalagatan 50",
+    "mapsQuery": "Tennstopet Stockholm",
+    "koordinater": {
+      "lat": 59.3449,
+      "lng": 18.0398
+    }
+  },
+  {
+    "id": 23,
+    "slug": "farang",
+    "namn": "Farang",
+    "kategori": "restaurang",
+    "tags": [
+      "asiatiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Tulegatan 7",
+    "mapsQuery": "Farang Stockholm",
+    "koordinater": {
+      "lat": 59.3442,
+      "lng": 18.0562
+    }
+  },
+  {
+    "id": 24,
+    "slug": "babette",
+    "namn": "Babette",
+    "kategori": "restaurang",
+    "tags": [
+      "pizza",
+      "vin"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Roslagsgatan 6",
+    "mapsQuery": "Babette Stockholm",
+    "koordinater": {
+      "lat": 59.3452,
+      "lng": 18.0569
+    }
+  },
+  {
+    "id": 25,
+    "slug": "19-glas",
+    "namn": "19 Glas",
+    "kategori": "vinbar",
+    "tags": [
+      "vin",
+      "romantiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "gamla_stan",
+    "adress": "Stora Nygatan 19",
+    "mapsQuery": "19 Glas Stockholm",
+    "koordinater": {
+      "lat": 59.3238,
+      "lng": 18.0682
+    }
+  },
+
+  {
+    "id": 26,
+    "slug": "baras-imperium",
+    "namn": "Baras Imperium",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "afterwork"
+    ],
+    "pris": "billig",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsgatan 103",
+    "mapsQuery": "Baras Imperium Stockholm",
+    "koordinater": {
+      "lat": 59.3178,
+      "lng": 18.0497
+    }
+  },
+  {
+    "id": 27,
+    "slug": "folkbaren",
+    "namn": "Folkbaren",
+    "kategori": "bar",
+    "tags": [
+      "vin",
+      "afterwork"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsgatan 72",
+    "mapsQuery": "Folkbaren Stockholm",
+    "koordinater": {
+      "lat": 59.3188,
+      "lng": 18.0574
+    }
+  },
+  {
+    "id": 28,
+    "slug": "bleck",
+    "namn": "Bleck",
+    "kategori": "bar",
+    "tags": [
+      "uteservering",
+      "cocktail"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Lilla Blecktornsparken",
+    "mapsQuery": "Bleck Stockholm",
+    "koordinater": {
+      "lat": 59.3096,
+      "lng": 18.0738
+    }
+  },
+  {
+    "id": 29,
+    "slug": "hornhuset",
+    "namn": "Hornhuset",
+    "kategori": "restaurang",
+    "tags": [
+      "cocktail",
+      "afterwork"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Långholmsgatan 15B",
+    "mapsQuery": "Hornhuset Stockholm",
+    "koordinater": {
+      "lat": 59.3173,
+      "lng": 18.0336
+    }
+  },
+  {
+    "id": 30,
+    "slug": "omnipollos-hatt",
+    "namn": "Omnipollos Hatt",
+    "kategori": "bar",
+    "tags": [
+      "ol",
+      "pizza"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hökens gata 1A",
+    "mapsQuery": "Omnipollos Hatt Stockholm",
+    "koordinater": {
+      "lat": 59.3175,
+      "lng": 18.0715
+    }
+  },
+  {
+    "id": 31,
+    "slug": "morfar-ginko",
+    "namn": "Morfar Ginko",
+    "kategori": "bar",
+    "tags": [
+      "cocktail",
+      "afterwork"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Swedenborgsgatan 13",
+    "mapsQuery": "Morfar Ginko Stockholm",
+    "koordinater": {
+      "lat": 59.3148,
+      "lng": 18.0607
+    }
+  },
+  {
+    "id": 32,
+    "slug": "malarpaviljongen",
+    "namn": "Mälarpaviljongen",
+    "kategori": "bar",
+    "tags": [
+      "utsikt",
+      "uteservering"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "Norr Mälarstrand 64",
+    "mapsQuery": "Mälarpaviljongen Stockholm",
+    "koordinater": {
+      "lat": 59.3257,
+      "lng": 18.0408
+    }
+  },
+  {
+    "id": 33,
+    "slug": "agnes",
+    "namn": "Agnes",
+    "kategori": "restaurang",
+    "tags": [
+      "lyx",
+      "dejt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "kungsholmen",
+    "adress": "Norra Agnegatan 43",
+    "mapsQuery": "Agnes Stockholm",
+    "koordinater": {
+      "lat": 59.3329,
+      "lng": 18.0356
+    }
+  },
+  {
+    "id": 34,
+    "slug": "master-anders",
+    "namn": "Mäster Anders",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "kungsholmen",
+    "adress": "Pipersgatan 1",
+    "mapsQuery": "Mäster Anders Stockholm",
+    "koordinater": {
+      "lat": 59.3308,
+      "lng": 18.0397
+    }
+  },
+  {
+    "id": 35,
+    "slug": "bergamott",
+    "namn": "Bergamott",
+    "kategori": "restaurang",
+    "tags": [
+      "franskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "kungsholmen",
+    "adress": "Hantverkargatan 35",
+    "mapsQuery": "Bergamott Stockholm",
+    "koordinater": {
+      "lat": 59.3288,
+      "lng": 18.0364
+    }
+  },
+  {
+    "id": 36,
+    "slug": "bishops-arms-kungsholmen",
+    "namn": "The Bishops Arms Kungsholmen",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "whisky"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "Hantverkargatan 50",
+    "mapsQuery": "The Bishops Arms Kungsholmen",
+    "koordinater": {
+      "lat": 59.329,
+      "lng": 18.0349
+    }
+  },
+  {
+    "id": 37,
+    "slug": "stadshuskallaren",
+    "namn": "Stadshuskällaren",
+    "kategori": "restaurang",
+    "tags": [
+      "historiskt",
+      "svenskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "kungsholmen",
+    "adress": "Hantverkargatan 1",
+    "mapsQuery": "Stadshuskällaren Stockholm",
+    "koordinater": {
+      "lat": 59.3275,
+      "lng": 18.0553
+    }
+  },
+  {
+    "id": 38,
+    "slug": "lydmar",
+    "namn": "Lydmar",
+    "kategori": "restaurang",
+    "tags": [
+      "cocktail",
+      "lyx"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Södra Blasieholmshamnen 2",
+    "mapsQuery": "Lydmar Stockholm",
+    "koordinater": {
+      "lat": 59.3299,
+      "lng": 18.0729
+    }
+  },
+  {
+    "id": 39,
+    "slug": "boqueria",
+    "namn": "Boqueria",
+    "kategori": "restaurang",
+    "tags": [
+      "tapas"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Jakobsbergsgatan 17",
+    "mapsQuery": "Boqueria Stockholm",
+    "koordinater": {
+      "lat": 59.3344,
+      "lng": 18.0673
+    }
+  },
+  {
+    "id": 40,
+    "slug": "asian-post-office",
+    "namn": "Asian Post Office",
+    "kategori": "restaurang",
+    "tags": [
+      "asiatiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Regeringsgatan 66",
+    "mapsQuery": "Asian Post Office Stockholm",
+    "koordinater": {
+      "lat": 59.3365,
+      "lng": 18.0668
+    }
+  },
+  {
+    "id": 41,
+    "slug": "calle-p",
+    "namn": "Calle P",
+    "kategori": "restaurang",
+    "tags": [
+      "cocktail",
+      "uteservering"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Berzelii Park",
+    "mapsQuery": "Calle P Stockholm",
+    "koordinater": {
+      "lat": 59.3329,
+      "lng": 18.0745
+    }
+  },
+  {
+    "id": 42,
+    "slug": "bierhaus",
+    "namn": "Bierhaus",
+    "kategori": "pub",
+    "tags": [
+      "ol",
+      "tyskt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Tegnérgatan 55",
+    "mapsQuery": "Bierhaus Stockholm",
+    "koordinater": {
+      "lat": 59.3398,
+      "lng": 18.0549
+    }
+  },
+  {
+    "id": 43,
+    "slug": "vassa-eggen",
+    "namn": "Vassa Eggen",
+    "kategori": "restaurang",
+    "tags": [
+      "steakhouse"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Birger Jarlsgatan 29",
+    "mapsQuery": "Vassa Eggen Stockholm",
+    "koordinater": {
+      "lat": 59.3388,
+      "lng": 18.0733
+    }
+  },
+  {
+    "id": 44,
+    "slug": "sparrow-wine-bar",
+    "namn": "Sparrow Wine Bar",
+    "kategori": "vinbar",
+    "tags": [
+      "vin",
+      "romantiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Birger Jarlsgatan 24",
+    "mapsQuery": "Sparrow Wine Bar Stockholm",
+    "koordinater": {
+      "lat": 59.3374,
+      "lng": 18.0731
+    }
+  },
+  {
+    "id": 45,
+    "slug": "hillenberg",
+    "namn": "Hillenberg",
+    "kategori": "restaurang",
+    "tags": [
+      "lyx"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Humlegårdsgatan 14",
+    "mapsQuery": "Hillenberg Stockholm",
+    "koordinater": {
+      "lat": 59.336,
+      "lng": 18.0781
+    }
+  },
+  {
+    "id": 46,
+    "slug": "astoria",
+    "namn": "Astoria",
+    "kategori": "restaurang",
+    "tags": [
+      "italienskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Nybrogatan 15",
+    "mapsQuery": "Astoria Stockholm",
+    "koordinater": {
+      "lat": 59.3346,
+      "lng": 18.0787
+    }
+  },
+  {
+    "id": 47,
+    "slug": "tweed",
+    "namn": "Tweed",
+    "kategori": "bar",
+    "tags": [
+      "whisky",
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "gamla_stan",
+    "adress": "Lilla Nygatan 5",
+    "mapsQuery": "Tweed Stockholm",
+    "koordinater": {
+      "lat": 59.324,
+      "lng": 18.0672
+    }
+  },
+  {
+    "id": 48,
+    "slug": "the-burgundy",
+    "namn": "The Burgundy",
+    "kategori": "vinbar",
+    "tags": [
+      "vin"
+    ],
+    "pris": "dyr",
+    "stadsdel": "gamla_stan",
+    "adress": "Yxsmedsgränd 12",
+    "mapsQuery": "The Burgundy Stockholm",
+    "koordinater": {
+      "lat": 59.3233,
+      "lng": 18.0675
+    }
+  },
+  {
+    "id": 49,
+    "slug": "zum-franziskaner",
+    "namn": "Zum Franziskaner",
+    "kategori": "restaurang",
+    "tags": [
+      "tyskt",
+      "historiskt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "gamla_stan",
+    "adress": "Skeppsbron 44",
+    "mapsQuery": "Zum Franziskaner Stockholm",
+    "koordinater": {
+      "lat": 59.3237,
+      "lng": 18.0735
+    }
+  },
+  {
+    "id": 50,
+    "slug": "under-kastanjen",
+    "namn": "Under Kastanjen",
+    "kategori": "kafe",
+    "tags": [
+      "fika",
+      "historiskt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "gamla_stan",
+    "adress": "Brända Tomten 2",
+    "mapsQuery": "Under Kastanjen Stockholm",
+    "koordinater": {
+      "lat": 59.325,
+      "lng": 18.071
+    }
+  },
+
+  {
+    "id": 51,
+    "slug": "bar-agrikultur",
+    "namn": "Bar Agrikultur",
+    "kategori": "restaurang",
+    "tags": [
+      "dejt",
+      "nordiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Skånegatan 79",
+    "mapsQuery": "Bar Agrikultur Stockholm",
+    "koordinater": {
+      "lat": 59.3439,
+      "lng": 18.0502
+    }
+  },
+  {
+    "id": 52,
+    "slug": "nisch",
+    "namn": "Nisch",
+    "kategori": "restaurang",
+    "tags": [
+      "avsmakning",
+      "nordiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Dalagatan 42",
+    "mapsQuery": "Nisch Stockholm",
+    "koordinater": {
+      "lat": 59.3442,
+      "lng": 18.0407
+    }
+  },
+  {
+    "id": 53,
+    "slug": "balzac",
+    "namn": "Balzac",
+    "kategori": "kafe",
+    "tags": [
+      "fika",
+      "brunch"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Odengatan 26",
+    "mapsQuery": "Balzac Stockholm",
+    "koordinater": {
+      "lat": 59.3426,
+      "lng": 18.0514
+    }
+  },
+  {
+    "id": 54,
+    "slug": "pas-dart",
+    "namn": "Pas D'Art",
+    "kategori": "restaurang",
+    "tags": [
+      "franskt",
+      "dejt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Norrmalmstorg 2-4",
+    "mapsQuery": "Pas D'Art Stockholm",
+    "koordinater": {
+      "lat": 59.3327,
+      "lng": 18.0739
+    }
+  },
+  {
+    "id": 55,
+    "slug": "restaurang-prinsen",
+    "namn": "Restaurang Prinsen",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt",
+      "historiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Mäster Samuelsgatan 4",
+    "mapsQuery": "Restaurang Prinsen Stockholm",
+    "koordinater": {
+      "lat": 59.3348,
+      "lng": 18.0746
+    }
+  },
+  {
+    "id": 56,
+    "slug": "wedholms-fisk",
+    "namn": "Wedholms Fisk",
+    "kategori": "restaurang",
+    "tags": [
+      "skaldjur"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Nybrokajen 17",
+    "mapsQuery": "Wedholms Fisk Stockholm",
+    "koordinater": {
+      "lat": 59.3299,
+      "lng": 18.0747
+    }
+  },
+  {
+    "id": 57,
+    "slug": "operakallaren",
+    "namn": "Operakällaren",
+    "kategori": "restaurang",
+    "tags": [
+      "lyx",
+      "svenskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Karl XII:s torg",
+    "mapsQuery": "Operakällaren Stockholm",
+    "koordinater": {
+      "lat": 59.3305,
+      "lng": 18.0711
+    }
+  },
+  {
+    "id": 58,
+    "slug": "bank-hotel-bar",
+    "namn": "Le Hibou",
+    "kategori": "bar",
+    "tags": [
+      "takbar",
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Arsenalsgatan 6",
+    "mapsQuery": "Le Hibou Stockholm",
+    "koordinater": {
+      "lat": 59.3318,
+      "lng": 18.0738
+    }
+  },
+  {
+    "id": 59,
+    "slug": "takpark",
+    "namn": "TAK Park",
+    "kategori": "bar",
+    "tags": [
+      "takbar",
+      "utsikt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Brunkebergstorg 2-4",
+    "mapsQuery": "TAK Park Stockholm",
+    "koordinater": {
+      "lat": 59.3325,
+      "lng": 18.0676
+    }
+  },
+  {
+    "id": 60,
+    "slug": "petit-france",
+    "namn": "Petit France",
+    "kategori": "kafe",
+    "tags": [
+      "fika",
+      "franskt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "John Ericssonsgatan 6",
+    "mapsQuery": "Petit France Stockholm",
+    "koordinater": {
+      "lat": 59.3248,
+      "lng": 18.0448
+    }
+  },
+  {
+    "id": 61,
+    "slug": "cafe-saturnus",
+    "namn": "Café Saturnus",
+    "kategori": "kafe",
+    "tags": [
+      "fika",
+      "brunch"
+    ],
+    "pris": "mellan",
+    "stadsdel": "ostermalm",
+    "adress": "Eriksbergsgatan 6",
+    "mapsQuery": "Café Saturnus Stockholm",
+    "koordinater": {
+      "lat": 59.337,
+      "lng": 18.0712
+    }
+  },
+  {
+    "id": 62,
+    "slug": "vete-katten",
+    "namn": "Vete-Katten",
+    "kategori": "kafe",
+    "tags": [
+      "fika",
+      "historiskt"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Kungsgatan 55",
+    "mapsQuery": "Vete-Katten Stockholm",
+    "koordinater": {
+      "lat": 59.3353,
+      "lng": 18.0585
+    }
+  },
+  {
+    "id": 63,
+    "slug": "fabrique-roslagsgatan",
+    "namn": "Fabrique Roslagsgatan",
+    "kategori": "kafe",
+    "tags": [
+      "fika"
+    ],
+    "pris": "billig",
+    "stadsdel": "vasastan",
+    "adress": "Roslagsgatan 6",
+    "mapsQuery": "Fabrique Roslagsgatan Stockholm",
+    "koordinater": {
+      "lat": 59.3451,
+      "lng": 18.0568
+    }
+  },
+  {
+    "id": 64,
+    "slug": "drop-coffee",
+    "namn": "Drop Coffee",
+    "kategori": "kafe",
+    "tags": [
+      "specialkaffe"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Wollmar Yxkullsgatan 10",
+    "mapsQuery": "Drop Coffee Stockholm",
+    "koordinater": {
+      "lat": 59.3161,
+      "lng": 18.0576
+    }
+  },
+  {
+    "id": 65,
+    "slug": "kaffe",
+    "namn": "Kaffeverket",
+    "kategori": "kafe",
+    "tags": [
+      "specialkaffe"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Sankt Eriksgatan 88",
+    "mapsQuery": "Kaffeverket Stockholm",
+    "koordinater": {
+      "lat": 59.3418,
+      "lng": 18.0326
+    }
+  },
+  {
+    "id": 66,
+    "slug": "espresso-room",
+    "namn": "Espresso Room",
+    "kategori": "kafe",
+    "tags": [
+      "fika"
+    ],
+    "pris": "billig",
+    "stadsdel": "norrmalm",
+    "adress": "Kungsgatan 18",
+    "mapsQuery": "Espresso Room Stockholm",
+    "koordinater": {
+      "lat": 59.335,
+      "lng": 18.07
+    }
+  },
+  {
+    "id": 67,
+    "slug": "grus-grus",
+    "namn": "Grus Grus",
+    "kategori": "vinbar",
+    "tags": [
+      "vin",
+      "naturvin"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Sankt Eriksgatan 76",
+    "mapsQuery": "Grus Grus Stockholm",
+    "koordinater": {
+      "lat": 59.3404,
+      "lng": 18.035
+    }
+  },
+  {
+    "id": 68,
+    "slug": "gaston",
+    "namn": "Gaston",
+    "kategori": "vinbar",
+    "tags": [
+      "vin"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Artillerigatan 14",
+    "mapsQuery": "Gaston Stockholm",
+    "koordinater": {
+      "lat": 59.3344,
+      "lng": 18.081
+    }
+  },
+  {
+    "id": 69,
+    "slug": "babette-wine",
+    "namn": "Babette Vinbar",
+    "kategori": "vinbar",
+    "tags": [
+      "vin",
+      "naturvin"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Roslagsgatan 6",
+    "mapsQuery": "Babette Stockholm",
+    "koordinater": {
+      "lat": 59.3452,
+      "lng": 18.0569
+    }
+  },
+  {
+    "id": 70,
+    "slug": "corvina",
+    "namn": "Corvina Enoteca",
+    "kategori": "vinbar",
+    "tags": [
+      "vin",
+      "italienskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Nybrogatan 48",
+    "mapsQuery": "Corvina Enoteca Stockholm",
+    "koordinater": {
+      "lat": 59.3375,
+      "lng": 18.082
+    }
+  },
+  {
+    "id": 71,
+    "slug": "himlen",
+    "namn": "Himlen",
+    "kategori": "restaurang",
+    "tags": [
+      "utsikt",
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "sodermalm",
+    "adress": "Götgatan 78",
+    "mapsQuery": "Himlen Stockholm",
+    "koordinater": {
+      "lat": 59.3136,
+      "lng": 18.0749
+    }
+  },
+  {
+    "id": 72,
+    "slug": "freyja",
+    "namn": "Freyja",
+    "kategori": "restaurang",
+    "tags": [
+      "utsikt",
+      "nordiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsgatan 18",
+    "mapsQuery": "Freyja Stockholm",
+    "koordinater": {
+      "lat": 59.3195,
+      "lng": 18.0687
+    }
+  },
+  {
+    "id": 73,
+    "slug": "sodra-teatern",
+    "namn": "Mosebacketerrassen",
+    "kategori": "bar",
+    "tags": [
+      "utsikt",
+      "uteservering"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Mosebacke Torg 1-3",
+    "mapsQuery": "Mosebacketerrassen Stockholm",
+    "koordinater": {
+      "lat": 59.3184,
+      "lng": 18.0747
+    }
+  },
+  {
+    "id": 74,
+    "slug": "hotel-rival",
+    "namn": "Rival Bistro",
+    "kategori": "restaurang",
+    "tags": [
+      "brunch"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Mariatorget 3",
+    "mapsQuery": "Rival Bistro Stockholm",
+    "koordinater": {
+      "lat": 59.317,
+      "lng": 18.06
+    }
+  },
+  {
+    "id": 75,
+    "slug": "ardbeg-embassy",
+    "namn": "Ardbeg Embassy",
+    "kategori": "bar",
+    "tags": [
+      "whisky"
+    ],
+    "pris": "dyr",
+    "stadsdel": "gamla_stan",
+    "adress": "Västerlånggatan 68B",
+    "mapsQuery": "Ardbeg Embassy Stockholm",
+    "koordinater": {
+      "lat": 59.3234,
+      "lng": 18.0688
+    }
+  },
+
+  {
+    "id": 76,
+    "slug": "stampen",
+    "namn": "Stampen",
+    "kategori": "bar",
+    "tags": [
+      "livemusik",
+      "jazz"
+    ],
+    "pris": "mellan",
+    "stadsdel": "gamla_stan",
+    "adress": "Stora Nygatan 5",
+    "mapsQuery": "Stampen Stockholm",
+    "koordinater": {
+      "lat": 59.3243,
+      "lng": 18.0685
+    }
+  },
+  {
+    "id": 77,
+    "slug": "fasching",
+    "namn": "Fasching",
+    "kategori": "bar",
+    "tags": [
+      "jazz",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Kungsgatan 63",
+    "mapsQuery": "Fasching Stockholm",
+    "koordinater": {
+      "lat": 59.3358,
+      "lng": 18.0568
+    }
+  },
+  {
+    "id": 78,
+    "slug": "debaser-strand",
+    "namn": "Debaser Strand",
+    "kategori": "bar",
+    "tags": [
+      "livemusik",
+      "nattliv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "Hornstulls Strand 4",
+    "mapsQuery": "Debaser Strand Stockholm",
+    "koordinater": {
+      "lat": 59.3167,
+      "lng": 18.0328
+    }
+  },
+  {
+    "id": 79,
+    "slug": "tradgarden",
+    "namn": "Trädgården",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "uteservering"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hammarby Slussväg 2",
+    "mapsQuery": "Trädgården Stockholm",
+    "koordinater": {
+      "lat": 59.313,
+      "lng": 18.0903
+    }
+  },
+  {
+    "id": 80,
+    "slug": "under-bron",
+    "namn": "Under Bron",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dans"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hammarby Slussväg 2",
+    "mapsQuery": "Under Bron Stockholm",
+    "koordinater": {
+      "lat": 59.313,
+      "lng": 18.0903
+    }
+  },
+  {
+    "id": 81,
+    "slug": "slakthuset",
+    "namn": "Slakthuset",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "techno"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Styckmästargatan 10",
+    "mapsQuery": "Slakthuset Stockholm",
+    "koordinater": {
+      "lat": 59.2918,
+      "lng": 18.0814
+    }
+  },
+  {
+    "id": 82,
+    "slug": "nalen",
+    "namn": "Nalen",
+    "kategori": "bar",
+    "tags": [
+      "livemusik",
+      "dans"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Regeringsgatan 74",
+    "mapsQuery": "Nalen Stockholm",
+    "koordinater": {
+      "lat": 59.3382,
+      "lng": 18.0667
+    }
+  },
+  {
+    "id": 83,
+    "slug": "geronimo",
+    "namn": "Geronimo's FGT",
+    "kategori": "bar",
+    "tags": [
+      "cocktail",
+      "mexikanskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Upplandsgatan 7",
+    "mapsQuery": "Geronimo's FGT Stockholm",
+    "koordinater": {
+      "lat": 59.3389,
+      "lng": 18.053
+    }
+  },
+  {
+    "id": 84,
+    "slug": "la-neta",
+    "namn": "La Neta",
+    "kategori": "restaurang",
+    "tags": [
+      "mexikanskt"
+    ],
+    "pris": "billig",
+    "stadsdel": "norrmalm",
+    "adress": "Barnhusgatan 2",
+    "mapsQuery": "La Neta Stockholm",
+    "koordinater": {
+      "lat": 59.3317,
+      "lng": 18.0615
+    }
+  },
+  {
+    "id": 85,
+    "slug": "melanders",
+    "namn": "Melanders Dalagatan",
+    "kategori": "restaurang",
+    "tags": [
+      "skaldjur"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Dalagatan 9R",
+    "mapsQuery": "Melanders Dalagatan Stockholm",
+    "koordinater": {
+      "lat": 59.3388,
+      "lng": 18.046
+    }
+  },
+  {
+    "id": 86,
+    "slug": "ling-long",
+    "namn": "Ling Long",
+    "kategori": "restaurang",
+    "tags": [
+      "asiatiskt",
+      "cocktail"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Riddarholmen 3",
+    "mapsQuery": "Ling Long Stockholm",
+    "koordinater": {
+      "lat": 59.3258,
+      "lng": 18.0639
+    }
+  },
+  {
+    "id": 87,
+    "slug": "basta",
+    "namn": "Basta",
+    "kategori": "restaurang",
+    "tags": [
+      "italienskt",
+      "takbar"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Åhléns City",
+    "mapsQuery": "Basta Stockholm",
+    "koordinater": {
+      "lat": 59.3329,
+      "lng": 18.0639
+    }
+  },
+  {
+    "id": 88,
+    "slug": "restaurang-agn",
+    "namn": "AGN",
+    "kategori": "restaurang",
+    "tags": [
+      "steakhouse"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Tegnérgatan 34",
+    "mapsQuery": "AGN Stockholm",
+    "koordinater": {
+      "lat": 59.3401,
+      "lng": 18.0549
+    }
+  },
+  {
+    "id": 89,
+    "slug": "savant",
+    "namn": "Savant Bar",
+    "kategori": "bar",
+    "tags": [
+      "naturvin",
+      "cocktail"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Tegelviksgatan 22",
+    "mapsQuery": "Savant Bar Stockholm",
+    "koordinater": {
+      "lat": 59.3125,
+      "lng": 18.0921
+    }
+  },
+  {
+    "id": 90,
+    "slug": "mikkeller",
+    "namn": "Mikkeller Stockholm",
+    "kategori": "bar",
+    "tags": [
+      "ol",
+      "craftbeer"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Brahegatan 3",
+    "mapsQuery": "Mikkeller Stockholm",
+    "koordinater": {
+      "lat": 59.338,
+      "lng": 18.0792
+    }
+  },
+  {
+    "id": 91,
+    "slug": "brewdog",
+    "namn": "BrewDog Bar",
+    "kategori": "bar",
+    "tags": [
+      "craftbeer",
+      "ol"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "Kungsholmsgatan 31",
+    "mapsQuery": "BrewDog Stockholm",
+    "koordinater": {
+      "lat": 59.3314,
+      "lng": 18.0508
+    }
+  },
+  {
+    "id": 92,
+    "slug": "omaka",
+    "namn": "Omaka",
+    "kategori": "restaurang",
+    "tags": [
+      "craftbeer",
+      "bryggeri"
+    ],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Uggelviksgatan 2",
+    "mapsQuery": "Omaka Stockholm",
+    "koordinater": {
+      "lat": 59.3467,
+      "lng": 18.0328
+    }
+  },
+  {
+    "id": 93,
+    "slug": "nya-carnegiebryggeriet",
+    "namn": "Nya Carnegiebryggeriet",
+    "kategori": "bar",
+    "tags": [
+      "bryggeri",
+      "ol"
+    ],
+    "pris": "mellan",
+    "stadsdel": "hammarby_sjostad",
+    "adress": "Ljusslingan 15",
+    "mapsQuery": "Nya Carnegiebryggeriet Stockholm",
+    "koordinater": {
+      "lat": 59.3058,
+      "lng": 18.1056
+    }
+  },
+  {
+    "id": 94,
+    "slug": "rosa-drömmar",
+    "namn": "Rosa Drömmar",
+    "kategori": "bar",
+    "tags": [
+      "vin",
+      "naturvin"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Katarina Bangata 25",
+    "mapsQuery": "Rosa Drömmar Stockholm",
+    "koordinater": {
+      "lat": 59.3116,
+      "lng": 18.0817
+    }
+  },
+  {
+    "id": 95,
+    "slug": "bar-nimes",
+    "namn": "Bar Nîmes",
+    "kategori": "bar",
+    "tags": [
+      "vin",
+      "franskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Grev Turegatan 15",
+    "mapsQuery": "Bar Nîmes Stockholm",
+    "koordinater": {
+      "lat": 59.3375,
+      "lng": 18.0755
+    }
+  },
+  {
+    "id": 96,
+    "slug": "frippe",
+    "namn": "Frippe",
+    "kategori": "restaurang",
+    "tags": [
+      "svenskt",
+      "lunch"
+    ],
+    "pris": "mellan",
+    "stadsdel": "ostermalm",
+    "adress": "Danderydsgatan 28",
+    "mapsQuery": "Frippe Stockholm",
+    "koordinater": {
+      "lat": 59.342,
+      "lng": 18.0794
+    }
+  },
+  {
+    "id": 97,
+    "slug": "lilla-ego",
+    "namn": "Lilla Ego",
+    "kategori": "restaurang",
+    "tags": [
+      "nordiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "vasastan",
+    "adress": "Västmannagatan 69",
+    "mapsQuery": "Lilla Ego Stockholm",
+    "koordinater": {
+      "lat": 59.3435,
+      "lng": 18.0368
+    }
+  },
+  {
+    "id": 98,
+    "slug": "sushi-sho",
+    "namn": "Sushi Sho",
+    "kategori": "restaurang",
+    "tags": [
+      "sushi",
+      "lyx"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Upplandsgatan 45",
+    "mapsQuery": "Sushi Sho Stockholm",
+    "koordinater": {
+      "lat": 59.3404,
+      "lng": 18.0502
+    }
+  },
+  {
+    "id": 99,
+    "slug": "frantzen",
+    "namn": "Frantzén",
+    "kategori": "restaurang",
+    "tags": [
+      "michelin",
+      "lyx"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Klara Norra Kyrkogata 26",
+    "mapsQuery": "Frantzén Stockholm",
+    "koordinater": {
+      "lat": 59.3315,
+      "lng": 18.0595
+    }
+  },
+  {
+    "id": 100,
+    "slug": "ekstedt",
+    "namn": "Ekstedt",
+    "kategori": "restaurang",
+    "tags": [
+      "michelin",
+      "nordiskt"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Humlegårdsgatan 17",
+    "mapsQuery": "Ekstedt Stockholm",
+    "koordinater": {
+      "lat": 59.3366,
+      "lng": 18.0779
+    }
+  }
+]
+
