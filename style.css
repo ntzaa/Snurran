@@ -272,15 +272,6 @@ button:hover{
 }
 
 
-.pageContent{
-
-    max-width:650px;
-    margin:0 auto;
-    padding:0 30px 30px;
-
-}
-
-
 
 /* ===============================
    Views
@@ -313,14 +304,13 @@ button:hover{
 
 }
 
-.pageContent{
-
-    max-width:650px;
-
-    margin:0 auto;
-
-    padding:40px 30px 30px 70px;
-
+.pageContent {
+    max-width: 650px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
 }
 
 /* ===============================
@@ -359,15 +349,6 @@ button:hover{
 
 }
 
-.pageContent{
-
-    max-width:650px;
-
-    margin:0 auto;
-
-    padding:0 30px;
-
-}
 
 /* ===============================
    Filter Category Card
