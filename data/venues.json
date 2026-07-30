@@ -3,7 +3,7 @@
     "id": 1,
     "slug": "kellys",
     "namn": "Kellys",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "budget",
@@ -23,7 +23,7 @@
     "id": 2,
     "slug": "akkurat",
     "namn": "Akkurat",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "whisky",
@@ -42,7 +42,7 @@
     "id": 3,
     "slug": "oliver-twist",
     "namn": "Oliver Twist",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "whisky"
@@ -60,7 +60,7 @@
     "id": 4,
     "slug": "the-flying-horse",
     "namn": "The Flying Horse",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "sport"
@@ -78,7 +78,7 @@
     "id": 5,
     "slug": "wirstroms-pub",
     "namn": "Wirströms Pub",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "livemusik"
@@ -96,7 +96,7 @@
     "id": 6,
     "slug": "the-liffey",
     "namn": "The Liffey",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "livemusik"
@@ -114,7 +114,7 @@
     "id": 7,
     "slug": "queens-head",
     "namn": "The Queen's Head",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "quiz"
@@ -132,7 +132,7 @@
     "id": 8,
     "slug": "man-in-the-moon",
     "namn": "Man in the Moon",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "whisky"
@@ -453,7 +453,7 @@
     "id": 26,
     "slug": "baras-imperium",
     "namn": "Baras Imperium",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "afterwork"
@@ -631,7 +631,7 @@
     "id": 36,
     "slug": "bishops-arms-kungsholmen",
     "namn": "The Bishops Arms Kungsholmen",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "whisky"
@@ -737,7 +737,7 @@
     "id": 42,
     "slug": "bierhaus",
     "namn": "Bierhaus",
-    "kategori": "pub",
+    "kategori": "bar",
     "tags": [
       "ol",
       "tyskt"
@@ -2990,5 +2990,170 @@
     "stadsdel": "norrmalm",
     "adress": "Sveavägen 14",
     "mapsQuery": "Fox in a Box Stockholm"
+  },
+  {
+    "id": 211,
+    "slug": "flying-horse",
+    "namn": "The Flying Horse",
+    "kategori": "bar",
+    "tags": ["sport", "engelsk_pub", "ol"],
+    "pris": "mellan",
+    "stadsdel": "ostermalm",
+    "adress": "Odengatan 44",
+    "mapsQuery": "The Flying Horse Stockholm"
+  },
+  {
+    "id": 212,
+    "slug": "southside-pub",
+    "namn": "Southside Pub",
+    "kategori": "bar",
+    "tags": ["sport", "ol", "engelsk_pub"],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsgatan 104",
+    "mapsQuery": "Southside Pub Stockholm"
+  },
+  {
+    "id": 213,
+    "slug": "old-brewer",
+    "namn": "The Old Brewer",
+    "kategori": "bar",
+    "tags": ["sport", "craft_beer", "engelsk_pub"],
+    "pris": "mellan",
+    "stadsdel": "vasastan",
+    "adress": "Luntmakargatan 98",
+    "mapsQuery": "The Old Brewer Stockholm"
+  },
+  {
+    "id": 214,
+    "slug": "broderna-olssons-garlic",
+    "namn": "Bröderna Olssons Garlic & Shots",
+    "kategori": "bar",
+    "tags": ["rock", "shots", "ol"],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Folkungagatan 84",
+    "mapsQuery": "Bröderna Olssons Garlic & Shots Stockholm"
+  },
+  {
+    "id": 215,
+    "slug": "the-dubliner",
+    "namn": "The Dubliner",
+    "kategori": "bar",
+    "tags": ["irish_pub", "live", "ol"],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Holländargatan 1",
+    "mapsQuery": "The Dubliner Stockholm"
+  },
+  {
+    "id": 216,
+    "slug": "oconnells",
+    "namn": "O'Connells Irish Pub",
+    "kategori": "bar",
+    "tags": ["irish_pub", "ol", "live"],
+    "pris": "mellan",
+    "stadsdel": "gamla_stan",
+    "adress": "Stora Nygatan 21",
+    "mapsQuery": "O'Connells Stockholm"
+  },
+  {
+    "id": 217,
+    "slug": "geronimos-fgt",
+    "namn": "Geronimo's FGT",
+    "kategori": "bar",
+    "tags": ["rock", "cocktail", "ol"],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Brunnsgatan 8",
+    "mapsQuery": "Geronimo's FGT Stockholm"
+  },
+  {
+    "id": 218,
+    "slug": "soft-korner",
+    "namn": "Soft Corner",
+    "kategori": "bar",
+    "tags": ["ol", "stammis", "billig_ol"],
+    "pris": "billig",
+    "stadsdel": "sodermalm",
+    "adress": "Malmgårdsvägen 63",
+    "mapsQuery": "Soft Corner Stockholm"
+  },
+  {
+    "id": 219,
+    "slug": "time-bar",
+    "namn": "Time Bar",
+    "kategori": "bar",
+    "tags": ["ol", "cocktail", "stammis"],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Hornsgatan 174",
+    "mapsQuery": "Time Bar Stockholm"
+  },
+  {
+    "id": 220,
+    "slug": "stigbergets-fot",
+    "namn": "Stigbergets Fot",
+    "kategori": "bar",
+    "tags": ["craft_beer", "ol"],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Götgatan 1",
+    "mapsQuery": "Stigbergets Fot Stockholm"
+  },
+  {
+    "id": 221,
+    "slug": "mikkeller-stockholm",
+    "namn": "Mikkeller Stockholm",
+    "kategori": "bar",
+    "tags": ["craft_beer", "ol"],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Brahegatan 3",
+    "mapsQuery": "Mikkeller Stockholm"
+  },
+  {
+    "id": 222,
+    "slug": "phils-burger-bar",
+    "namn": "Phil's Burger Bar",
+    "kategori": "bar",
+    "tags": ["burgare", "ol"],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Kungsgatan 24",
+    "mapsQuery": "Phil's Burger Kungsgatan"
+  },
+  {
+    "id": 223,
+    "slug": "lion-bar-fridhemsplan",
+    "namn": "Lion Bar Fridhemsplan",
+    "kategori": "bar",
+    "tags": ["billig_ol", "sport", "sunkhak"],
+    "pris": "billig",
+    "stadsdel": "kungsholmen",
+    "adress": "Sankt Eriksgatan 30",
+    "mapsQuery": "Lion Bar Fridhemsplan Stockholm"
+  },
+  {
+    "id": 224,
+    "slug": "lion-bar-odenplan",
+    "namn": "Lion Bar Odenplan",
+    "kategori": "bar",
+    "tags": ["billig_ol", "sport", "sunkhak"],
+    "pris": "billig",
+    "stadsdel": "vasastan",
+    "adress": "Odengatan 87",
+    "mapsQuery": "Lion Bar Odenplan Stockholm"
+  },
+  {
+    "id": 225,
+    "slug": "lion-bar-medborgarplatsen",
+    "namn": "Lion Bar Medborgarplatsen",
+    "kategori": "bar",
+    "tags": ["billig_ol", "sport", "sunkhak"],
+    "pris": "billig",
+    "stadsdel": "sodermalm",
+    "adress": "Folkungagatan 22",
+    "mapsQuery": "Lion Bar Medborgarplatsen Stockholm"
   }
 ]

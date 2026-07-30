@@ -35,7 +35,6 @@ const filterButton =
 
 
 // Typfilter
-const typePub = document.getElementById("typePub");
 const typeBar = document.getElementById("typeBar");
 const typeRestaurant =
     document.getElementById("typeRestaurant");
@@ -241,7 +240,6 @@ function getSelectedFilters() {
 
         categories: [
 
-            typePub.checked ? "pub" : null,
             typeBar.checked ? "bar" : null,
             typeRestaurant.checked ? "restaurang" : null
 
