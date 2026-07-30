@@ -124,6 +124,10 @@ function showView(viewId) {
 
     closeMenu();
 
+    if (viewId === "filterView") {
+    updateFavoriteFilterMode();
+}
+
     if (viewId === "venueView") {
 
     menuButton.classList.add("hidden");
@@ -433,6 +437,35 @@ homeButton.addEventListener("click", showHome);
 // Favoriter
 favoritesButton.addEventListener("click", showFavorites);
 homeButton.addEventListener("click", showHome);
+
+//Filtrera bort filter när favotitfilter är aktivt
+const favoritesOnly = document.getElementById("favoritesOnly");
+
+function updateFavoriteFilterMode() {
+
+   const filterCards = document
+    .getElementById("filterView")
+    .querySelectorAll(
+        ".filterCard:not(.filterFavoritesCard)"
+    );
+
+    filterCards.forEach(card => {
+
+        if (favoritesOnly.checked) {
+            card.classList.add("disabled");
+        } else {
+            card.classList.remove("disabled");
+        }
+
+    });
+
+}
+
+favoritesOnly.addEventListener("change", function () {
+
+    updateFavoriteFilterMode();
+
+});
 
 // ===============================
 //         ANALYSVERKTYG

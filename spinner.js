@@ -79,6 +79,10 @@ function getFilteredVenues() {
 
     const filters = getSelectedFilters();
 
+    if (favoritesOnly.checked) {
+        return favorites;
+    }
+
     console.log("Filters:", filters);
 
     const result = venues.filter(venue => {
@@ -98,7 +102,11 @@ function getFilteredVenues() {
         const districtMatch =
             filters.districts.length === 0 ||
             filters.districts.includes(venue.stadsdel);
-        return categoryMatch && tagMatch && priceMatch && districtMatch;
+
+        return categoryMatch &&
+               tagMatch &&
+               priceMatch &&
+               districtMatch;
 
     });
 

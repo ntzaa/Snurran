@@ -822,8 +822,8 @@
   },
   {
     "id": 47,
-    "slug": "tweed",
-    "namn": "Tweed",
+    "slug": "leijontornet-bar",
+    "namn": "Leijontornet Bar",
     "kategori": "bar",
     "tags": [
       "whisky",
@@ -832,7 +832,7 @@
     "pris": "dyr",
     "stadsdel": "gamla_stan",
     "adress": "Lilla Nygatan 5",
-    "mapsQuery": "Tweed Stockholm",
+    "mapsQuery": "Leijontornet Bar Stockholm",
     "koordinater": {
       "lat": 59.324,
       "lng": 18.0672
@@ -2432,14 +2432,14 @@
   },
   {
     "id": 160,
-    "slug": "olden",
-    "namn": "Olden",
+    "slug": "dublin-delight",
+    "namn": "Dublin Delight",
     "kategori": "bar",
     "tags": ["ol", "billig_ol", "stammis"],
     "pris": "billig",
     "stadsdel": "sodermalm",
     "adress": "Ölandsgatan 45",
-    "mapsQuery": "Olden Stockholm"
+    "mapsQuery": "Dublin Delight Stockholm"
   },
   {
     "id": 161,
