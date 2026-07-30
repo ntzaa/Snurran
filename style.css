@@ -488,9 +488,27 @@ button:hover{
 
 
 /* ===============================
-        
+        HISTORIK
 ================================ */
 
+.historyFavoriteButton {
+
+    background: none;
+    border: none;
+
+    width: auto !important;
+    height: auto !important;
+
+    flex: 0 0 auto !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: inline-block !important;
+
+    font-size: 24px;
+
+}
 
 
 #homeView{

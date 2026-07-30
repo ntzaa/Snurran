@@ -14,6 +14,14 @@ if (savedFavorites) {
     favorites = JSON.parse(savedFavorites);
 }
 
+let spinHistory = [];
+
+const savedSpinHistory = localStorage.getItem("spinHistory");
+
+if (savedSpinHistory) {
+    spinHistory = JSON.parse(savedSpinHistory);
+}
+
 // ===============================
 // HTML-element
 // ===============================
@@ -40,6 +48,9 @@ const filterButton =
 
 const favoritesButton =
     document.getElementById("favoritesButton"); 
+
+const venueHistoryButton =
+    document.getElementById("venueHistoryButton");
     
 const favoritesBackButton =
     document.getElementById("favoritesBackButton");
@@ -125,27 +136,34 @@ function showView(viewId) {
     closeMenu();
 
     if (viewId === "filterView") {
-    updateFavoriteFilterMode();
-}
+
+        updateFavoriteFilterMode();
+
+    }
+
+    if (viewId === "venueHistoryView") {
+
+        renderHistory();
+
+    }
 
     if (viewId === "venueView") {
 
-    menuButton.classList.add("hidden");
+        menuButton.classList.add("hidden");
 
-} else {
+    } else {
 
-    menuButton.classList.remove("hidden");
+        menuButton.classList.remove("hidden");
+
+    }
+
+    if (viewId === "homeView") {
+
+        refreshSpinner();
+
+    }
 
 }
-
-if (viewId === "homeView") {
-
-    refreshSpinner();
-
-}
-
-}
-
 
 function openMenu() {
 
@@ -174,6 +192,12 @@ function showFilter() {
 function showFavorites() {
 
     showView("favoritesView");
+
+}
+
+function showVenueHistory() {
+
+    showView("venueHistoryView");
 
 }
 
@@ -264,6 +288,8 @@ function showVenue() {
         </div>
 
     `;
+
+    addToHistory(currentVenue);
 
     showView("venueView");
 
@@ -416,6 +442,25 @@ favoritesList.appendChild(item);
 
 }
 
+function addToHistory(venue) {
+
+    // Ta bort restaurangen om den redan finns
+    spinHistory = spinHistory.filter(item => item.id !== venue.id);
+
+    // Lägg den först i listan
+    spinHistory.unshift(venue);
+
+    // Behåll max 20 restauranger
+    spinHistory = spinHistory.slice(0, 20);
+
+    // Spara
+    localStorage.setItem(
+        "spinHistory",
+        JSON.stringify(spinHistory)
+    );
+
+}
+
 // ===============================
 // Event Listeners
 // ===============================
@@ -430,13 +475,17 @@ menuButton.addEventListener("click", openMenu);
 closeButton.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
+// Hem
+homeButton.addEventListener("click", showHome);
+
 // Filter
 filterButton.addEventListener("click", showFilter);
-homeButton.addEventListener("click", showHome);
 
 // Favoriter
 favoritesButton.addEventListener("click", showFavorites);
-homeButton.addEventListener("click", showHome);
+
+// Historik
+venueHistoryButton.addEventListener("click", showVenueHistory);
 
 //Filtrera bort filter när favotitfilter är aktivt
 const favoritesOnly = document.getElementById("favoritesOnly");
@@ -466,6 +515,63 @@ favoritesOnly.addEventListener("change", function () {
     updateFavoriteFilterMode();
 
 });
+
+function renderHistory() {
+
+    venueHistoryList.innerHTML = "";
+
+    spinHistory.forEach(venue => {
+
+        const item = document.createElement("div");
+        item.className = "searchResult";
+
+        const name = document.createElement("span");
+        name.textContent = venue.namn;
+
+        const favoriteButton = document.createElement("button");
+        favoriteButton.className = "historyFavoriteButton";
+        favoriteButton.innerHTML =
+    favorites.some(favorite => favorite.id === venue.id)
+        ? "❤️"
+        : "🤍";
+
+favoriteButton.addEventListener("click", function (event) {
+
+    event.stopPropagation();
+
+    const isFavorite =
+        favorites.some(favorite => favorite.id === venue.id);
+
+    if (isFavorite) {
+
+        favorites = favorites.filter(
+            favorite => favorite.id !== venue.id
+        );
+
+    } else {
+
+        favorites.push(venue);
+
+    }
+
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
+
+    renderFavorites();
+    renderHistory();
+
+});
+
+        item.appendChild(name);
+        item.appendChild(favoriteButton);
+
+        venueHistoryList.appendChild(item);
+
+    });
+
+}
 
 // ===============================
 //         ANALYSVERKTYG
