@@ -12,8 +12,10 @@ let spinnerOrder = [];
 
 let currentOffset = 0;
 let spinning = false;
+let hasSpun = false;
 
 let buttonMode = "spin";
+
 
 // ===============================
 // Shuffle
@@ -53,13 +55,13 @@ function buildSpinner(names) {
 
         names.forEach(name => {
 
-            html += `
-                <div class="spinnerItem">
-                    ${name}
-                </div>
-            `;
+    html += `
+        <div class="spinnerItem">
+            ${hasSpun ? name : "❓❓❓"}
+        </div>
+    `;
 
-        });
+});
 
     }
 
@@ -196,6 +198,9 @@ buildSpinner(
 // ===============================
 
 function randomVenue() {
+
+        hasSpun = true;
+        refreshSpinner();
 
 const filtered = spinnerOrder;
 

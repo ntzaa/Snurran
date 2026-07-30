@@ -148,9 +148,13 @@ function showFilter() {
 
 function showHome() {
 
+    hasSpun = false;
+    refreshSpinner();
+
     showView("homeView");
-buttonMode = "spin";
-randomButton.textContent = "SNURRA";
+
+    buttonMode = "spin";
+    randomButton.textContent = "SNURRA";
 }
 
 

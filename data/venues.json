@@ -3155,5 +3155,455 @@
     "stadsdel": "sodermalm",
     "adress": "Folkungagatan 22",
     "mapsQuery": "Lion Bar Medborgarplatsen Stockholm"
+  },
+  {
+    "id": 226,
+    "slug": "spy-bar",
+    "namn": "Spy Bar",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Birger Jarlsgatan 20",
+    "mapsQuery": "Spy Bar Stockholm",
+    "koordinater": {
+      "lat": 59.3347,
+      "lng": 18.0736
+    }
+  },
+  {
+    "id": 227,
+    "slug": "sturecompagniet",
+    "namn": "Sturecompagniet",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "ostermalm",
+    "adress": "Sturegatan 4",
+    "mapsQuery": "Sturecompagniet Stockholm",
+    "koordinater": {
+      "lat": 59.3356,
+      "lng": 18.0742
+    }
+  },
+  {
+    "id": 228,
+    "slug": "cafe-opera",
+    "namn": "Café Opera",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Karl XII:s torg",
+    "mapsQuery": "Café Opera Stockholm",
+    "koordinater": {
+      "lat": 59.3305,
+      "lng": 18.0728
+    }
+  },
+  {
+    "id": 229,
+    "slug": "slakthuset",
+    "namn": "Slakthuset",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Styckmästargatan 10",
+    "mapsQuery": "Slakthuset Stockholm",
+    "koordinater": {
+      "lat": 59.2916,
+      "lng": 18.0805
+    }
+  },
+  {
+    "id": 230,
+    "slug": "berns",
+    "namn": "Berns",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Näckströmsgatan 8",
+    "mapsQuery": "Berns Stockholm",
+    "koordinater": {
+      "lat": 59.3324,
+      "lng": 18.0734
+    }
+  },
+  {
+    "id": 231,
+    "slug": "sodra-teatern",
+    "namn": "Södra Teatern",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Mosebacke Torg 1",
+    "mapsQuery": "Södra Teatern Stockholm",
+    "koordinater": {
+      "lat": 59.3195,
+      "lng": 18.0729
+    }
+  },
+  {
+    "id": 232,
+    "slug": "kollektivet-livet",
+    "namn": "Kollektivet Livet",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Stadsgårdsterminalen",
+    "mapsQuery": "Kollektivet Livet Stockholm",
+    "koordinater": {
+      "lat": 59.3190,
+      "lng": 18.0780
+    }
+  },
+  {
+    "id": 233,
+    "slug": "patricia",
+    "namn": "M/S Patricia",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "sodermalm",
+    "adress": "Söder Mälarstrand Kajplats 19",
+    "mapsQuery": "M/S Patricia Stockholm",
+    "koordinater": {
+      "lat": 59.3228,
+      "lng": 18.0568
+    }
+  },
+  {
+    "id": 234,
+    "slug": "golden-hits",
+    "namn": "Golden Hits",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Kungsgatan 29",
+    "mapsQuery": "Golden Hits Stockholm",
+    "koordinater": {
+      "lat": 59.3354,
+      "lng": 18.0628
+    }
+  },
+  {
+    "id": 235,
+    "slug": "backdoor",
+    "namn": "Backdoor",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Arenavägen 75",
+    "mapsQuery": "Backdoor Stockholm",
+    "koordinater": {
+      "lat": 59.2935,
+      "lng": 18.0823
+    }
+  },
+  {
+    "id": 236,
+    "slug": "rose",
+    "namn": "Rose",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Hamngatan 2",
+    "mapsQuery": "Rose Stockholm",
+    "koordinater": {
+      "lat": 59.3329,
+      "lng": 18.0737
+    }
+  },
+  {
+    "id": 237,
+    "slug": "fallan",
+    "namn": "Fållan",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Slakthusområdet",
+    "mapsQuery": "Fållan Stockholm",
+    "koordinater": {
+      "lat": 59.2913,
+      "lng": 18.0808
+    }
+  },
+  {
+    "id": 238,
+    "slug": "debaser-klubben",
+    "namn": "Debaser Klubben",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "kungsholmen",
+    "adress": "Hornstulls Strand 4",
+    "mapsQuery": "Debaser Strand Stockholm",
+    "koordinater": {
+      "lat": 59.3167,
+      "lng": 18.0328
+    }
+  },
+  {
+    "id": 239,
+    "slug": "neu-house",
+    "namn": "Neu House",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Berzelii Park 9",
+    "mapsQuery": "Neu House Stockholm",
+    "koordinater": {
+      "lat": 59.3326,
+      "lng": 18.0733
+    }
+  },
+  {
+    "id": 240,
+    "slug": "le-at-berns",
+    "namn": "LE! at Berns",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Näckströmsgatan 8",
+    "mapsQuery": "LE! Berns Stockholm",
+    "koordinater": {
+      "lat": 59.3324,
+      "lng": 18.0734
+    }
+  },
+  {
+    "id": 241,
+    "slug": "banankompaniet",
+    "namn": "Banankompaniet",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "ostermalm",
+    "adress": "Frihamnsgatan 66",
+    "mapsQuery": "Banankompaniet Stockholm",
+    "koordinater": {
+      "lat": 59.3473,
+      "lng": 18.1140
+    }
+  },
+  {
+    "id": 242,
+    "slug": "krets",
+    "namn": "Krets",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Sveavägen 45",
+    "mapsQuery": "Krets Stockholm",
+    "koordinater": {
+      "lat": 59.3392,
+      "lng": 18.0588
+    }
+  },
+  {
+    "id": 243,
+    "slug": "fou",
+    "namn": "Fou",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Jakobsbergsgatan 15",
+    "mapsQuery": "Fou Stockholm",
+    "koordinater": {
+      "lat": 59.3342,
+      "lng": 18.0706
+    }
+  },
+  {
+    "id": 244,
+    "slug": "f12-studio",
+    "namn": "F12 Studio",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Fredsgatan 12",
+    "mapsQuery": "F12 Studio Stockholm",
+    "koordinater": {
+      "lat": 59.3298,
+      "lng": 18.0657
+    }
+  },
+  {
+    "id": 245,
+    "slug": "f12-terrassen",
+    "namn": "F12 Terrassen",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "norrmalm",
+    "adress": "Fredsgatan 12",
+    "mapsQuery": "F12 Terrassen Stockholm",
+    "koordinater": {
+      "lat": 59.3298,
+      "lng": 18.0657
+    }
+  },
+  {
+    "id": 246,
+    "slug": "slaktkyrkan",
+    "namn": "Slaktkyrkan",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "livemusik"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Styckmästargatan 10",
+    "mapsQuery": "Slaktkyrkan Stockholm",
+    "koordinater": {
+      "lat": 59.2918,
+      "lng": 18.0803
+    }
+  },
+  {
+    "id": 247,
+    "slug": "hosoi",
+    "namn": "Hosoi",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Slakthusområdet",
+    "mapsQuery": "Hosoi Stockholm",
+    "koordinater": {
+      "lat": 59.2915,
+      "lng": 18.0809
+    }
+  },
+  {
+    "id": 248,
+    "slug": "evenew",
+    "namn": "Evenew",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "dyr",
+    "stadsdel": "norrmalm",
+    "adress": "Hamngatan 2",
+    "mapsQuery": "Evenew Stockholm",
+    "koordinater": {
+      "lat": 59.3330,
+      "lng": 18.0739
+    }
+  },
+  {
+    "id": 249,
+    "slug": "a75",
+    "namn": "A75",
+    "kategori": "bar",
+    "tags": [
+      "nattliv",
+      "dansgolv"
+    ],
+    "pris": "mellan",
+    "stadsdel": "johanneshov",
+    "adress": "Arenavägen 75",
+    "mapsQuery": "A75 Stockholm",
+    "koordinater": {
+      "lat": 59.2935,
+      "lng": 18.0822
+    }
+  },
+  {
+  "id": 250,
+  "slug": "timebar",
+  "namn": "Timebar",
+  "kategori": "bar",
+  "tags": [
+    "nattliv",
+    "dansgolv"
+  ],
+  "pris": "mellan",
+  "stadsdel": "sodermalm",
+  "adress": "Hornsgatan 174",
+  "mapsQuery": "Timebar Stockholm",
+  "koordinater": {
+    "lat": 59.3169,
+    "lng": 18.0322
   }
+}
 ]
