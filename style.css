@@ -32,11 +32,11 @@ body{
 
 h1{
 
-    font-size:70px;
+    font-size:54px;
 
     font-weight:800;
 
-    letter-spacing:6px;
+    letter-spacing:2px;
 
     margin-bottom:15px;
 }
@@ -47,7 +47,7 @@ h1{
 
     margin-bottom:50px;
 
-    font-size:18px;
+    font-size:20px;
 }
 
 .display{
@@ -341,7 +341,7 @@ button:hover{
 
 .pageHeader h1{
 
-    font-size:56px;
+    font-size:40px;
 
     font-weight:800;
 
