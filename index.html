@@ -40,7 +40,7 @@
 
     <li id="filterButton">🎯 Filter</li>
 
-    <li>⭐ Favoriter</li>
+    <li id="favoritesButton">⭐ Favoriter</li>
 
     <li>🕘 Historik</li>
 
@@ -114,10 +114,6 @@
     <div class="pageContent">
 
         <div class="pageHeader">
-
-            <button id="filterBackButton" class="backButton">
-                ← Tillbaka
-            </button>
 
             <h1>Filter</h1>
 
@@ -217,6 +213,46 @@
     </div>
 
 </div> <!-- filterView -->
+
+
+    <!-- ===============================
+         Favoriter
+    ================================ -->
+
+<div id="favoritesView" class="view">
+
+    <div class="pageContent">
+
+        <div class="pageHeader">
+
+
+
+            <h1>Favoriter</h1>
+
+            <p class="subtitle">
+                Lägg till favoriter för att bygga din egen snurra.
+            </p>
+
+            <input
+                type="search"
+                id="favoriteSearch"
+                class="searchInput"
+                placeholder="Sök bland alla snurrans val...">
+
+                <div id="favoriteSearchResults"></div>
+
+                <h2 class="favoritesTitle">Dina favoriter</h2>
+
+                <div id="favoritesList"></div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
 
    <!-- ===============================
          Restaurangvy

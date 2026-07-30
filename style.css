@@ -425,8 +425,85 @@ button:hover{
 
 
 /* ===============================
-   
+         SEARCH INPUT
 ================================ */
+
+.searchInput {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 20px;
+
+    font-size: 16px;
+    font-family: inherit;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    background: white;
+    color: #222;
+
+    box-sizing: border-box;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.searchResult {
+
+    padding: 14px 16px;
+    margin-top: 8px;
+
+    background: #2b2b2b;
+
+    border-radius: 10px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: background .15s;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.searchResult:hover {
+
+    background: #3a3a3a;
+
+}
+
+.removeFavoriteButton {
+    background: none;
+    border: none;
+
+    width: auto;
+    height: auto;
+
+    padding: 0;
+    margin: 0;
+
+    flex: 0 0 auto;
+
+    font-size: 1.4rem;
+    color: rgb(151, 30, 30);
+    cursor: pointer;
+}
+
+.favoritesTitle {
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+
+/* ===============================
+        
+================================ */
+
 
 
 #homeView{
