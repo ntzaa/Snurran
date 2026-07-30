@@ -265,7 +265,7 @@ button:hover{
     visibility:visible;
 }
 
-#settingsView{
+#filterView{
 
     background:#121212;
 
@@ -296,13 +296,11 @@ button:hover{
     width: 100%;
     height: 100vh;
 
+    overflow-y: auto;
 
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
-
 }
 
 .view.active{
@@ -372,10 +370,10 @@ button:hover{
 }
 
 /* ===============================
-   Settings Cards
+   Filter Category Card
 ================================ */
 
-.settingsCard{
+.filterCard{
 
     background:#232323;
 
@@ -387,9 +385,10 @@ button:hover{
 
     box-shadow:0 0 25px rgba(0,0,0,.35);
 
+    margin-bottom: 16px;
 }
 
-.settingsCard h3{
+.filterCard h3{
 
     font-size:18px;
 
@@ -397,7 +396,7 @@ button:hover{
 
 }
 
-.settingsCard label{
+.filterCard label{
 
     display:flex;
 
@@ -413,7 +412,7 @@ button:hover{
 
 }
 
-.settingsCard input[type="checkbox"]{
+.filterCard input[type="checkbox"]{
 
     width:20px;
 
@@ -422,6 +421,13 @@ button:hover{
     cursor:pointer;
 
 }
+
+
+
+/* ===============================
+   
+================================ */
+
 
 #homeView{
 

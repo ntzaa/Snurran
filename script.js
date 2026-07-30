@@ -20,8 +20,8 @@ console.log("toggleSpin =", toggleSpin);
 const homeButton = document.getElementById("homeButton");
 const menuButton = document.getElementById("menuButton");
 
-const settingsBackButton =
-    document.getElementById("settingsBackButton");
+const filterBackButton =
+    document.getElementById("filterBackButton");
 
 const venueBackButton =
     document.getElementById("venueBackButton");
@@ -30,8 +30,8 @@ const sideMenu = document.getElementById("sideMenu");
 const closeButton = document.getElementById("closeButton");
 const overlay = document.getElementById("overlay");
 
-const settingsButton =
-    document.getElementById("settingsButton");
+const filterButton =
+    document.getElementById("filterButton");
 
 
 // Typfilter
@@ -49,12 +49,22 @@ const typeWine =
 const typeNightclub =
     document.getElementById("typeNightclub");
 
+const priceBillig = document.getElementById("priceBillig");
+const priceMellan = document.getElementById("priceMellan");
+const priceDyr = document.getElementById("priceDyr");
+
+const districtSodermalm = document.getElementById("districtSodermalm");
+const districtNorrmalm = document.getElementById("districtNorrmalm");
+const districtVasastan = document.getElementById("districtVasastan");
+const districtOstermalm = document.getElementById("districtOstermalm");
+const districtKungsholmen = document.getElementById("districtKungsholmen");
+const districtGamlaStan = document.getElementById("districtGamlaStan");
 
 // ===============================
 // Event Listeners
 // ===============================
 
-settingsBackButton.addEventListener("click", showHome);
+filterBackButton.addEventListener("click", showHome);
 venueBackButton.addEventListener("click", showHome);
 
 
@@ -130,9 +140,9 @@ function closeMenu() {
 }
 
 
-function showSettings() {
+function showFilter() {
 
-    showView("settingsView");
+    showView("filterView");
 
 }
 
@@ -243,10 +253,32 @@ function getSelectedFilters() {
             typeWine.checked ? "vin" : null,
             typeNightclub.checked ? "nattliv" : null
 
+        ].filter(Boolean),
+
+        prices: [
+
+            priceBillig.checked ? "billig" : null,
+            priceMellan.checked ? "mellan" : null,
+            priceDyr.checked ? "dyr" : null
+
+        ].filter(Boolean),
+
+        districts: [
+
+            districtSodermalm.checked ? "sodermalm" : null,
+            districtNorrmalm.checked ? "norrmalm" : null,
+            districtVasastan.checked ? "vasastan" : null,
+            districtOstermalm.checked ? "ostermalm" : null,
+            districtKungsholmen.checked ? "kungsholmen" : null,
+            districtGamlaStan.checked ? "gamla_stan" : null,
+        
+
         ].filter(Boolean)
 
+    
     };
 
+    
 }
 
 
@@ -264,6 +296,98 @@ menuButton.addEventListener("click", openMenu);
 closeButton.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-// Inställningar
-settingsButton.addEventListener("click", showSettings);
+// Filter
+filterButton.addEventListener("click", showFilter);
 homeButton.addEventListener("click", showHome);
+
+
+// ===============================
+//         ANALYSVERKTYG
+// ===============================
+
+function analyzeVenues() {
+
+    const stats = {
+        total: venues.length,
+        categories: {},
+        prices: {},
+        districts: {},
+        tags: {},
+        missing: {
+            kategori: [],
+            pris: [],
+            tags: []
+        }
+    };
+
+    venues.forEach(venue => {
+
+        // Kategori
+        if (venue.kategori) {
+            stats.categories[venue.kategori] =
+                (stats.categories[venue.kategori] || 0) + 1;
+        } else {
+            stats.missing.kategori.push(venue.namn);
+        }
+
+        // Pris
+        if (venue.pris) {
+            stats.prices[venue.pris] =
+                (stats.prices[venue.pris] || 0) + 1;
+        } else {
+            stats.missing.pris.push(venue.namn);
+        }
+
+        // Stadsdel
+        if (venue.stadsdel) {
+
+            stats.districts[venue.stadsdel] =
+                (stats.districts[venue.stadsdel] || 0) + 1;
+
+}
+        // Taggar
+        if (Array.isArray(venue.tags) && venue.tags.length > 0) {
+
+            venue.tags.forEach(tag => {
+                stats.tags[tag] =
+                    (stats.tags[tag] || 0) + 1;
+            });
+
+        } else {
+
+            stats.missing.tags.push(venue.namn);
+
+        }
+
+    });
+
+    console.clear();
+
+    console.log("========== SNURRAN ANALYS ==========\n");
+
+    console.log("Totalt antal ställen:", stats.total);
+
+    console.log("\n📂 Kategorier");
+    console.table(stats.categories);
+
+    console.log("\n💰 Pris");
+    console.table(stats.prices);
+
+    console.log("\n📍 Stadsdelar");
+    console.table(stats.districts);
+
+    console.log("\n🏷️ Taggar");
+    console.table(stats.tags);
+
+    console.log("\n⚠️ Saknar kategori:", stats.missing.kategori.length);
+    console.log(stats.missing.kategori);
+
+    console.log("\n⚠️ Saknar pris:", stats.missing.pris.length);
+    console.log(stats.missing.pris);
+
+    console.log("\n⚠️ Saknar taggar:", stats.missing.tags.length);
+    console.log(stats.missing.tags);
+
+    console.log("\n====================================");
+
+}

@@ -89,7 +89,14 @@ function getFilteredVenues() {
             filters.tags.length === 0 ||
             venue.tags.some(tag => filters.tags.includes(tag));
 
-        return categoryMatch && tagMatch;
+        const priceMatch =
+            filters.prices.length === 0 ||
+            filters.prices.includes(venue.pris);
+
+        const districtMatch =
+            filters.districts.length === 0 ||
+            filters.districts.includes(venue.stadsdel);
+        return categoryMatch && tagMatch && priceMatch && districtMatch;
 
     });
 

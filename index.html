@@ -38,11 +38,13 @@
 
     <li id="homeButton">🏠 Startsida</li>
 
-    <li id="settingsButton">⚙ Inställningar</li>
+    <li id="filterButton">🎯 Filter</li>
 
     <li>⭐ Favoriter</li>
 
     <li>🕘 Historik</li>
+
+    <li>⚙ Inställningar</li>
 
     <li>ℹ Om</li>
 
@@ -104,30 +106,30 @@
 
 
     <!-- ===============================
-         Inställningar
+         Filter
     ================================ -->
 
-    <div id="settingsView" class="view">
+<div id="filterView" class="view">
 
     <div class="pageContent">
 
         <div class="pageHeader">
 
-            <button id="settingsBackButton" class="backButton">
+            <button id="filterBackButton" class="backButton">
                 ← Tillbaka
             </button>
 
-            <h1>Inställningar</h1>
+            <h1>Filter</h1>
 
             <p class="subtitle">
-                Anpassa hur Snurran fungerar.
+                Välj vilka ställen som ska ingå i Snurran.
             </p>
 
         </div>
 
-        <div class="settingsCard">
+    <div class="filterCard filterCategoryCard">
 
-            <h3>Typ av ställe</h3>
+        <h3>Typ av ställe</h3>
 
             <label>
                 <input type="checkbox" id="typePub" checked>
@@ -159,11 +161,67 @@
                 Nattklubb
             </label>
 
-        </div>
-
     </div>
 
-</div> <!-- settingsView -->
+    <div class="filterCard filterPriceCard">
+
+            <h3>Pris</h3>
+
+            <label>
+                <input type="checkbox" id="priceBillig" checked>
+                Billigt
+            </label>
+
+            <label>
+                <input type="checkbox" id="priceMellan" checked>
+                Mellan
+            </label>
+
+            <label>
+                <input type="checkbox" id="priceDyr" checked>
+                Dyrt
+            </label>
+
+        </div>
+
+    <div class="filterCard filterDistrictCard">
+
+        <h2>Stadsdel</h2>
+
+            <label>
+                <input type="checkbox" id="districtSodermalm">
+                    Södermalm
+            </label>
+
+            <label>
+                <input type="checkbox" id="districtNorrmalm">
+                    Norrmalm
+            </label>
+
+            <label>
+                 <input type="checkbox" id="districtVasastan">
+                    Vasastan
+            </label>
+
+            <label>
+                <input type="checkbox" id="districtOstermalm">
+                    Östermalm
+            </label>
+
+            <label>
+                <input type="checkbox" id="districtKungsholmen">
+                    Kungsholmen
+            </label>
+
+            <label>
+                <input type="checkbox" id="districtGamlaStan">
+                    Gamla stan
+            </label>
+
+        </div>    
+    </div>
+
+</div> <!-- filterView -->
 
    <!-- ===============================
          Restaurangvy
@@ -185,7 +243,7 @@
 
         </div>
 
-        <div class="settingsCard">
+        <div class="filterCard">
 
             <p id="venueDescription">
                 Här kommer information om restaurangen.
