@@ -637,6 +637,195 @@ button:hover{
 
 
 
+/* ===============================
+        Splash Screen
+================================ */
+
+#splashScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#111;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    transition:opacity .8s ease;
+
+}
+
+#splashScreen.fadeOut{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+#splashTitle{
+
+    color:#D4AF37;
+
+    font-size:4rem;
+
+    font-weight:900;
+
+    letter-spacing:8px;
+
+    opacity:1;
+
+}
+
+@keyframes splashPop {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    55% {
+
+        transform: scale(1.12);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+@keyframes splashPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    40%{
+
+        transform:scale(1.10);
+
+    }
+
+    70%{
+
+        transform:scale(.98);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
 
 
+/* ===============================
+        Intro View
+================================ */
 
+#introView{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#111;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:1;
+
+    z-index:9998;
+
+}
+
+#introView.fadeOut{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .6s ease;
+
+}
+
+@keyframes pulseHint {
+
+    0%,100%{
+
+        opacity:.35;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+.tapToContinue{
+
+    margin-top:60px;
+
+    font-size:18px;
+
+    color:#8d8d8d;
+
+    animation:pulseHint 2s infinite;
+
+}
+
+.introContent{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+.introContent h1{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    margin-bottom:35px;
+
+}
+
+.introContent p{
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    color:#E6E6E6;
+
+    margin:0 0 24px;
+
+}

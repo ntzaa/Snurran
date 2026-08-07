@@ -96,6 +96,10 @@ const favoritesList =
 venueBackButton.addEventListener("click", showHome);
 favoriteSearch.addEventListener("input", searchFavorites);
 
+document
+    .getElementById("introView")
+    .addEventListener("click", startApp);
+
 // ===============================
 // Ladda venues
 // ===============================
@@ -119,6 +123,63 @@ console.log("Venue-fil inläst!");
 // ===============================
 // Funktioner
 // ===============================
+
+function playSplashScreen() {
+
+    const splash =
+        document.getElementById("splashScreen");
+
+    const title =
+        document.getElementById("splashTitle");
+
+    const text = "SNURRAN";
+
+    let index = 0;
+
+    const interval = setInterval(() => {
+
+        title.textContent += text[index];
+
+        index++;
+
+        if(index >= text.length){
+
+            clearInterval(interval);
+
+            setTimeout(() => {
+
+                title.style.animation = "splashPop .35s ease";
+
+            setTimeout(() => {
+
+    splash.classList.add("fadeOut");
+
+    document.getElementById("introView").style.display = "flex";
+
+},350);
+
+},1000);
+
+        }
+
+    },80);
+
+}
+
+function startApp() {
+
+    const intro =
+        document.getElementById("introView");
+
+    intro.classList.add("fadeOut");
+
+    setTimeout(() => {
+
+        intro.style.display = "none";
+
+    },600);
+
+}
 
 function showView(viewId) {
 
@@ -572,6 +633,8 @@ favoriteButton.addEventListener("click", function (event) {
     });
 
 }
+
+playSplashScreen();
 
 // ===============================
 //         ANALYSVERKTYG
