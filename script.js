@@ -131,12 +131,6 @@ fetch("data/venues.json")
 
     initSpinner();
 
-    setTimeout(() => {
-
-        refreshSpinner();
-
-    }, 0);
-
     console.log("Venue-fil inläst!");
     console.log(venues);
 
@@ -196,12 +190,13 @@ function startApp() {
 
     intro.classList.add("fadeOut");
 
+    refreshSpinner();
+
     setTimeout(() => {
 
         intro.style.display = "none";
 
     },600);
-
 }
 
 function showView(viewId) {
