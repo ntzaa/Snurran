@@ -147,7 +147,7 @@
 
 #spinnerList.spinnerIdle .spinnerItem{
 
-    animation: spinnerIdleFloat 30s ease-in-out infinite;
+    animation: spinnerIdleFloat 10s ease-in-out infinite;
 
 }
 
@@ -161,7 +161,7 @@
 
     50%{
 
-        transform: translateY(-800px);
+        transform: translateY(-120px);
 
     }
 

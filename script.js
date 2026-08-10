@@ -105,6 +105,10 @@ venueBackButton.addEventListener("click", () => {
 
         randomButton.textContent = "SNURRA";
 
+        hasSpun = false;
+
+        buildSpinner(spinnerOrder);
+
     }
 
 });
