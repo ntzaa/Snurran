@@ -148,7 +148,7 @@ function playSplashScreen() {
 
             setTimeout(() => {
 
-                title.style.animation = "splashPop .35s ease";
+                title.style.animation = "splashPop 1.8s ease";
 
             setTimeout(() => {
 
@@ -162,7 +162,7 @@ function playSplashScreen() {
 
         }
 
-    },80);
+    },120);
 
 }
 

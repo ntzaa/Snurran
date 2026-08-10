@@ -157,19 +157,33 @@ button:hover{
     transition:opacity .35s ease;
 
 }
+
 #menuButton{
 
     position:fixed;
 
-    top:25px;
+    top:0;
+    left:0;
 
-    left:25px;
+    width:100%;
+
+    height:85px;
+
+    background:#111;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:25px;
+
+    box-sizing:border-box;
 
     font-size:35px;
 
     cursor:pointer;
 
     z-index:1000;
+
 }
 
 #menuButton.hidden{
@@ -656,7 +670,7 @@ button:hover{
 
     z-index:99999;
 
-    transition:opacity .8s ease;
+    transition:opacity 1.5s ease;
 
 }
 
@@ -690,21 +704,15 @@ button:hover{
 
     }
 
-    55% {
-
-        transform: scale(1.12);
-
-    }
-
     100% {
 
-        transform: scale(1);
+        transform: scale(1.4);
 
     }
 
 }
 
-@keyframes splashPulse{
+/*@keyframes splashPulse{
 
     0%{
 
@@ -730,7 +738,7 @@ button:hover{
 
     }
 
-}
+} */
 
 
 /* ===============================
@@ -762,7 +770,7 @@ button:hover{
 
     pointer-events:none;
 
-    transition:opacity .6s ease;
+    transition:opacity 0.6s ease;
 
 }
 
