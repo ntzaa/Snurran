@@ -66,7 +66,10 @@ function buildSpinner(names) {
     }
 
     spinnerList.innerHTML = html;
-
+    spinnerList.classList.toggle(
+    "spinnerIdle",
+    !hasSpun
+);
 
 }
 

@@ -99,6 +99,14 @@ venueBackButton.addEventListener("click", () => {
 
     showView(previousView);
 
+    if (previousView === "homeView") {
+
+        buttonMode = "spin";
+
+        randomButton.textContent = "SNURRA";
+
+    }
+
 });
 
 favoriteSearch.addEventListener("input", searchFavorites);
