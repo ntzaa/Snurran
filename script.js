@@ -311,19 +311,41 @@ function showVenue() {
     document.getElementById("venueTitle").textContent =
         currentVenue.namn;
 
+        const venueGoogleLink =
+    document.getElementById("venueGoogleLink");
+
+const googleSearch =
+    `${currentVenue.namn} ${currentVenue.adress}`;
+
+venueGoogleLink.href =
+    "https://www.google.com/search?q=" +
+    encodeURIComponent(googleSearch);
+
     document.getElementById("venueDescription").innerHTML = `
 
+<div class="infoRow infoRowTwoColumns">
+
+    <div>
+
+        <strong>Kategori</strong><br>
+
+        ${capitalize(currentVenue.kategori)}
+
+    </div>
+
+    <div>
+
+        <strong>Pris</strong><br>
+
+        ${capitalize(currentVenue.pris)}
+
+    </div>
+
+</div>
+
         <div class="infoRow">
 
-            <strong>🍴 Kategori</strong><br>
-
-            ${capitalize(currentVenue.kategori)}
-
-        </div>
-
-        <div class="infoRow">
-
-            <strong>🏷️ Taggar</strong><br>
+            <strong>Taggar</strong><br>
 
             <div class="tagContainer">
 
@@ -335,17 +357,10 @@ function showVenue() {
 
         </div>
 
-        <div class="infoRow">
-
-            <strong>💰 Pris</strong><br>
-
-            ${capitalize(currentVenue.pris)}
-
-        </div>
 
         <div class="infoRow">
 
-            <strong>🏙️ Stadsdel</strong><br>
+            <strong>Stadsdel</strong><br>
 
             ${capitalize(currentVenue.stadsdel)}
 
@@ -353,7 +368,7 @@ function showVenue() {
 
         <div class="infoRow">
 
-            <strong>📍 Adress</strong><br>
+            <strong>Adress</strong><br>
 
             ${currentVenue.adress}
 

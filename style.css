@@ -606,10 +606,17 @@ button:hover{
 
 }
 
+
+
 /* ===============================
         RESTAURANGKORTET
 ================================ */
 
+#venueView .pageContent{
+
+    padding-top:0;
+
+}
 #venueFavoriteButton{
 
     background:none;
@@ -651,6 +658,30 @@ button:hover{
 .infoRow:last-child{
 
     margin-bottom:0;
+
+}
+
+.infoRowTwoColumns{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+#venueGoogleLink{
+
+    display:block;
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:bold;
 
 }
 
