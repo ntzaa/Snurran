@@ -245,11 +245,13 @@ function showView(viewId) {
 
     }
 
-    if (viewId === "homeView") {
+if (viewId === "homeView") {
 
+    setTimeout(() => {
         refreshSpinner();
+    }, 0);
 
-    }
+}
 
 }
 
