@@ -124,19 +124,23 @@ document
 // ===============================
 
 fetch("data/venues.json")
-    .then(response => response.json())
-    .then(venueData => {
+.then(response => response.json())
+.then(venueData => {
 
-        venues = venueData;
+    venues = venueData;
 
-initSpinner();
+    initSpinner();
 
-refreshSpinner(venues);
+    setTimeout(() => {
 
-console.log("Venue-fil inläst!");
-        console.log(venues);
+        refreshSpinner();
 
-    });
+    }, 0);
+
+    console.log("Venue-fil inläst!");
+    console.log(venues);
+
+});
 
 
 // ===============================
