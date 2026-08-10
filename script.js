@@ -180,6 +180,8 @@ setTimeout(() => {
 
         document.getElementById("introView").style.display = "flex";
 
+        refreshSpinner();
+
     }, 1500);
 
 },350);
@@ -244,14 +246,6 @@ function showView(viewId) {
         menuButton.classList.remove("hidden");
 
     }
-
-if (viewId === "homeView") {
-
-    setTimeout(() => {
-        refreshSpinner();
-    }, 0);
-
-}
 
 }
 
