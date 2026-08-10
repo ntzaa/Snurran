@@ -8,6 +8,8 @@ let venues = [];
 
 let favorites = [];
 
+let previousView = "homeView";
+
 const savedFavorites = localStorage.getItem("favorites");
 
 if (savedFavorites) {
@@ -93,7 +95,12 @@ const favoritesList =
 // Event Listeners
 // ===============================
 
-venueBackButton.addEventListener("click", showHome);
+venueBackButton.addEventListener("click", () => {
+
+    showView(previousView);
+
+});
+
 favoriteSearch.addEventListener("input", searchFavorites);
 
 document
@@ -297,6 +304,10 @@ function showVenue() {
     if (currentVenue === null)
         return;
 
+        previousView =
+        document.querySelector(".view.active").id;
+
+
     document.getElementById("venueTitle").textContent =
         currentVenue.namn;
 
@@ -350,9 +361,51 @@ function showVenue() {
 
     `;
 
-    addToHistory(currentVenue);
+   addToHistory(currentVenue);
 
-    showView("venueView");
+const venueFavoriteButton =
+    document.getElementById("venueFavoriteButton");
+
+const isFavorite =
+    favorites.some(favorite =>
+        favorite.id === currentVenue.id
+    );
+
+venueFavoriteButton.textContent =
+    isFavorite ? "❤️" : "🤍";
+
+venueFavoriteButton.onclick = () => {
+
+    const isFavorite =
+        favorites.some(favorite =>
+            favorite.id === currentVenue.id
+        );
+
+    if (isFavorite) {
+
+        favorites = favorites.filter(favorite =>
+            favorite.id !== currentVenue.id
+        );
+
+    } else {
+
+        favorites.push(currentVenue);
+
+    }
+
+    localStorage.setItem(
+    "favorites",
+    JSON.stringify(favorites)
+);
+
+renderFavorites();
+
+venueFavoriteButton.textContent =
+    isFavorite ? "🤍" : "❤️";
+
+};
+
+showView("venueView");
 
 }
 
@@ -465,7 +518,7 @@ result.addEventListener("click", () => {
 
 function renderFavorites() {
 
-        localStorage.setItem(
+    localStorage.setItem(
         "favorites",
         JSON.stringify(favorites)
     );
@@ -475,33 +528,51 @@ function renderFavorites() {
     favorites.forEach(venue => {
 
         const item = document.createElement("div");
-item.className = "searchResult";
 
-const name = document.createElement("span");
-name.textContent = venue.namn;
+        item.className = "searchResult";
 
-const removeButton = document.createElement("button");
-removeButton.className = "removeFavoriteButton";
-removeButton.innerHTML = "&times;";
+        item.style.cursor = "pointer";
 
-removeButton.addEventListener("click", () => {
+        item.addEventListener("click", () => {
 
-    favorites = favorites.filter(favorite =>
-        favorite.id !== venue.id
-    );
+            currentVenue = venue;
 
-    renderFavorites();
+            showVenue();
 
-});
+        });
 
-item.appendChild(name);
-item.appendChild(removeButton);
+        const name = document.createElement("span");
 
-favoritesList.appendChild(item);
+        name.textContent = venue.namn;
+
+        const removeButton = document.createElement("button");
+
+        removeButton.className = "removeFavoriteButton";
+
+        removeButton.innerHTML = "&times;";
+
+        removeButton.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            favorites = favorites.filter(favorite =>
+                favorite.id !== venue.id
+            );
+
+            renderFavorites();
+
+        });
+
+        item.appendChild(name);
+
+        item.appendChild(removeButton);
+
+        favoritesList.appendChild(item);
 
     });
 
 }
+
 
 function addToHistory(venue) {
 
@@ -584,9 +655,21 @@ function renderHistory() {
     spinHistory.forEach(venue => {
 
         const item = document.createElement("div");
+
         item.className = "searchResult";
 
+        item.style.cursor = "pointer";
+
+        item.addEventListener("click", () => {
+
+            currentVenue = venue;
+
+            showVenue();
+
+        });
+
         const name = document.createElement("span");
+
         name.textContent = venue.namn;
 
         const favoriteButton = document.createElement("button");
