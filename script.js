@@ -289,7 +289,6 @@ function showVenueHistory() {
 function showHome() {
 
     hasSpun = false;
-    refreshSpinner();
 
     showView("homeView");
 
