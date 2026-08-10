@@ -149,6 +149,11 @@ function playSplashScreen() {
     const title =
         document.getElementById("splashTitle");
 
+    const menuButton =
+        document.getElementById("menuButton");
+
+        menuButton.classList.add("hidden");
+
     const text = "SNURRAN";
 
     let index = 0;
@@ -167,11 +172,15 @@ function playSplashScreen() {
 
                 title.style.animation = "splashPop 1.8s ease";
 
-            setTimeout(() => {
+setTimeout(() => {
 
     splash.classList.add("fadeOut");
 
-    document.getElementById("introView").style.display = "flex";
+    setTimeout(() => {
+
+        document.getElementById("introView").style.display = "flex";
+
+    }, 1500);
 
 },350);
 
@@ -190,11 +199,11 @@ function startApp() {
 
     intro.classList.add("fadeOut");
 
-    refreshSpinner();
-
     setTimeout(() => {
 
         intro.style.display = "none";
+
+        showView("homeView");
 
     },600);
 }
