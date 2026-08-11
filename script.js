@@ -300,6 +300,18 @@ function showHome() {
     randomButton.textContent = "SNURRA";
 }
 
+function showSettings() {
+
+    showView("settingsView");
+
+}
+
+function showAbout() {
+
+    showView("aboutView");
+
+}
+
 
 function capitalize(text) {
 
@@ -559,6 +571,18 @@ function renderFavorites() {
 
     favoritesList.innerHTML = "";
 
+    if (favorites.length === 0) {
+
+    favoritesList.innerHTML = `
+        <div class="emptyListMessage">
+            <strong>Du har inga favoriter ännu.</strong><br>
+            <span>Sök fram en egen favorit eller tryck på ❤️ på en snurrad restaurang för att spara den här.</span>
+        </div>
+    `;
+
+    return;
+}
+
     favorites.forEach(venue => {
 
         const item = document.createElement("div");
@@ -653,6 +677,13 @@ favoritesButton.addEventListener("click", showFavorites);
 // Historik
 venueHistoryButton.addEventListener("click", showVenueHistory);
 
+// Inställningar
+settingsButton.addEventListener("click", showSettings);
+
+// Om
+aboutButton.addEventListener("click", showAbout);
+
+
 //Filtrera bort filter när favotitfilter är aktivt
 const favoritesOnly = document.getElementById("favoritesOnly");
 
@@ -685,6 +716,18 @@ favoritesOnly.addEventListener("change", function () {
 function renderHistory() {
 
     venueHistoryList.innerHTML = "";
+
+    if (spinHistory.length === 0) {
+
+    venueHistoryList.innerHTML = `
+        <div class="emptyListMessage">
+            <strong>Ingen historik ännu.</strong><br>
+            <span>Snurra för att få fram historik.</span>
+        </div>
+    `;
+
+    return;
+}
 
     spinHistory.forEach(venue => {
 

@@ -803,6 +803,21 @@ button:hover{
 
 } */
 
+/* ===============================
+   TOMMA FAVORITER OCH HISTORIK
+================================ */
+
+.emptyListMessage {
+
+    text-align: center;
+
+    color: #9A9A9A;
+
+    padding: 40px 20px;
+
+    font-size: 17px;
+
+}
 
 /* ===============================
         Intro View
