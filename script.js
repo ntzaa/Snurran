@@ -257,6 +257,17 @@ function showView(viewId) {
 
 function updateActiveFilters() {
 
+    const activeFiltersElement =
+        document.getElementById("activeFilters");
+
+    if (favoritesOnly.checked) {
+
+        activeFiltersElement.textContent =
+            "Endast favoritställen";
+
+        return;
+    }
+
     const filters = getSelectedFilters();
 
     const activeFilters = [
@@ -265,9 +276,6 @@ function updateActiveFilters() {
         ...filters.prices,
         ...filters.districts
     ];
-
-    const activeFiltersElement =
-        document.getElementById("activeFilters");
 
     if (activeFilters.length === 0) {
 
