@@ -203,6 +203,8 @@ function startApp() {
     const intro =
         document.getElementById("introView");
 
+    updateActiveFilters();
+
     intro.classList.add("fadeOut");
 
     setTimeout(() => {
@@ -253,6 +255,33 @@ function showView(viewId) {
 
 }
 
+function updateActiveFilters() {
+
+    const filters = getSelectedFilters();
+
+    const activeFilters = [
+        ...filters.categories,
+        ...filters.tags,
+        ...filters.prices,
+        ...filters.districts
+    ];
+
+    const activeFiltersElement =
+        document.getElementById("activeFilters");
+
+    if (activeFilters.length === 0) {
+
+        activeFiltersElement.textContent = "";
+
+        return;
+    }
+
+    activeFiltersElement.textContent =
+        activeFilters
+            .map(filter => capitalize(filter))
+            .join(" · ");
+}
+
 function openMenu() {
 
     sideMenu.classList.add("open");
@@ -292,9 +321,13 @@ function showVenueHistory() {
 
 function showHome() {
 
+    console.log("SHOW HOME – refreshar spinner");
+
     hasSpun = false;
 
     refreshSpinner();
+
+    updateActiveFilters();
 
     showView("homeView");
 

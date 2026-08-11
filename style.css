@@ -915,3 +915,22 @@ button:hover{
     margin:0 0 24px;
 
 }
+
+/* =======================================
+   VISA FILTER OVAN SNURREN
+   ======================================= */
+
+   #activeFilters {
+
+    min-height: 10px;
+
+    margin-bottom: 16px;
+
+    text-align: center;
+
+    color: #828282;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}

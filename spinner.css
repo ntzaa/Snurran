@@ -343,3 +343,39 @@
 
 }
 
+/* =======================================
+   SNURREN GER INGET RESULTAT
+   ======================================= */   
+
+   .spinnerNoResult {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding-top: 85px;
+
+    text-align: center;
+
+    gap: 8px;
+
+    color: #D4AF37;
+
+    font-size: 20px;
+}
+
+.spinnerNoResult span {
+
+    color: #9A9A9A;
+
+    font-size: 16px;
+
+}
+
+

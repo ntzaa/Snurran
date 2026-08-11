@@ -180,16 +180,37 @@ function calculateTargetIndex(filtered, winnerIndex) {
 // ===============================
 
 function refreshSpinner() {
+
     spinnerOrder = shuffle(getFilteredVenues());
+
+    const spinnerList =
+        document.getElementById("spinnerList");
+
+if (spinnerOrder.length === 0) {
+
+    spinnerList.innerHTML = `
+        <div class="spinnerNoResult">
+            <strong>INGET RESULTAT</strong>
+            <span>Prova att ändra dina filter.</span>
+        </div>
+    `;
+
+    spinnerList.style.transition = "none";
+    spinnerList.style.transform = "translateY(0)";
+
+    randomButton.classList.add("buttonHidden");
+
+    return;
+}
+
+randomButton.classList.remove("buttonHidden");
 
 buildSpinner(
     spinnerOrder.map(v => v.namn)
 );
 
-    const firstItem = document.querySelector(".spinnerItem");
-
-    const spinnerList =
-        document.getElementById("spinnerList");
+    const firstItem =
+        document.querySelector(".spinnerItem");
 
     const startOffset =
         START_LOOP *
@@ -197,10 +218,11 @@ buildSpinner(
         ITEM_HEIGHT;
 
     spinnerList.style.transition = "none";
+
     spinnerList.style.transform =
         `translateY(-${startOffset}px)`;
-        currentOffset = startOffset;
 
+    currentOffset = startOffset;
 }
 
 
@@ -215,8 +237,10 @@ function randomVenue() {
 
 const filtered = spinnerOrder;
 
-    if (filtered.length === 0)
-        return;
+if (filtered.length === 0) {
+    spinning = false;
+    return;
+}
 
     const spinnerList =
         document.getElementById("spinnerList");
