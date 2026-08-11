@@ -180,11 +180,12 @@ setTimeout(() => {
 
     document.getElementById("introView").style.display = "flex";
 
-    requestAnimationFrame(() => {
+    
+    //requestAnimationFrame(() => {
 
-        refreshSpinner();
+    //    refreshSpinner();
 
-    });
+    //}); 
 
 },1500);
 
