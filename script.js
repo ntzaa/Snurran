@@ -178,11 +178,15 @@ setTimeout(() => {
 
     setTimeout(() => {
 
-        document.getElementById("introView").style.display = "flex";
+    document.getElementById("introView").style.display = "flex";
+
+    requestAnimationFrame(() => {
 
         refreshSpinner();
 
-    }, 1500);
+    });
+
+},1500);
 
 },350);
 
