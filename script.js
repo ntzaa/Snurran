@@ -186,7 +186,7 @@ setTimeout(() => {
 
 }, 100);
 
-},1500);
+},900);
 
 },350);
 
@@ -211,7 +211,7 @@ function startApp() {
 
         showView("homeView");
 
-    },600);
+    },400);
 }
 
 function showView(viewId) {
