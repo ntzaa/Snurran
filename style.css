@@ -650,8 +650,6 @@ button:hover{
     overflow-wrap: anywhere;
     line-height: 1.1;
     max-width: 100%;
-    
-    line-height: 1.1;
 }
 
 .infoRow{
@@ -688,7 +686,7 @@ button:hover{
 
     font-weight:bold;
 
-    color:rgb(231, 199, 71);
+    color:rgb(242, 181, 60);
 }
 
 .tagContainer{
@@ -715,8 +713,38 @@ button:hover{
 
     color:white;
 
+    margin-bottom: 24px;
 }
 
+#venueDescription {
+    margin-top: -32px;
+
+}
+
+.venueTypePrice {
+    font-size: 22px;
+    margin-bottom: 60px;
+    margin-left: 0px;
+    color:rgb(221, 152, 48);
+
+}
+
+.venueDistrict {
+    color:rgb(255, 255, 255);
+    font-size: 18px;
+
+}
+
+.venueAddress {
+    margin-top: -22px;
+    color:rgb(255, 255, 255);
+
+}
+
+.venueOpeningHours {
+    margin-top: 60px;
+    color:rgba(221, 152, 48, 0.249);
+}
 
 
 /* ===============================

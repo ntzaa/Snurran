@@ -410,58 +410,46 @@ venueGoogleLink.href =
 
 document.getElementById("venueDescription").innerHTML = `
 
-<div class="infoRow infoRowTwoColumns">
+    <div class="infoRow">
 
-    <div>
-
-        <strong>Pris</strong><br>
-
-        ${capitalize(currentVenue.pris)}
-
-    </div>
-
-    <div>
-
-        <strong>Kategori</strong><br>
-
-        ${capitalize(currentVenue.kategori)}
-
-    </div>
-
-</div>
-
-        <div class="infoRow">
-
-            <strong>Taggar</strong><br>
-
-            <div class="tagContainer">
+        <div class="tagContainer">
 
                 ${currentVenue.tags.map(tag =>
                 `<span class="tag">${formatTag(tag)}</span>`
                 ).join("")}
 
-            </div>
-
         </div>
 
+    </div>
 
-        <div class="infoRow">
+    <div class="infoRow venueTypePrice">
 
-            <strong>Stadsdel</strong><br>
+        <strong>
+            ${capitalize(currentVenue.pris)}
+            ·
+            ${capitalize(currentVenue.kategori)}
+        </strong>
 
-            ${capitalize(currentVenue.stadsdel)}
+    </div>
+           
 
-        </div>
+<div class="infoRow venueDistrict">
 
-        <div class="infoRow">
+        <strong>${capitalize(currentVenue.stadsdel)}</strong>
 
-            <strong>Adress</strong><br>
+    </div>
 
-            ${currentVenue.adress}
+<div class="infoRow venueAddress">
+    ${currentVenue.adress}
+</div>
 
-        </div>
+<div class="infoRow venueOpeningHours">
 
-    `;
+        <strong>Öppettider: Ingen information tillgänglig.</strong>
+                
+</div>
+
+`;
 
    addToHistory(currentVenue);
 
