@@ -647,9 +647,9 @@ button:hover{
     text-shadow:
         0 1px 10px rgba(255,255,255,.08);
 
-    overflow-wrap: break-word;
-    
-    word-break: break-word;
+    overflow-wrap: anywhere;
+    line-height: 1.1;
+    max-width: 100%;
     
     line-height: 1.1;
 }
