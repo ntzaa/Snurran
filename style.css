@@ -723,7 +723,7 @@ button:hover{
 
 .venueTypePrice {
     font-size: 22px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     margin-left: 0px;
     color:rgb(221, 152, 48);
 
@@ -742,7 +742,7 @@ button:hover{
 }
 
 .venueOpeningHours {
-    margin-top: 60px;
+    margin-top: 40px;
     color:rgba(221, 152, 48, 0.249);
 }
 
