@@ -699,6 +699,7 @@ button:hover{
 
     margin-top:8px;
 
+    padding-right:60px;
 }
 
 .tag{
@@ -717,7 +718,7 @@ button:hover{
 }
 
 #venueDescription {
-    margin-top: -32px;
+    margin-top: -34px;
 
 }
 

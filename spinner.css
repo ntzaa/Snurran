@@ -231,19 +231,20 @@
 }
 
 
-.winnerCelebrate{
+.winnerCelebrate {
 
-    animation: winnerPop 1.2s ease-out;
+    animation: winnerPop 1.2s ease-in-out infinite;
 
 }
 
 @keyframes winnerGlow {
 
     0% {
-        box-shadow: 0 0 0px rgba(255,215,0,0);
+        box-shadow:
+            0 0 0px rgba(255,215,0,0);
     }
 
-    30% {
+    35% {
         box-shadow:
             0 0 15px gold,
             0 0 35px orange,
@@ -251,14 +252,14 @@
     }
 
     100% {
-        box-shadow: 0 0 0px rgba(255,215,0,0);
+        box-shadow:
+            0 0 0px rgba(255,215,0,0);
     }
-
 }
 
-.celebrate{
+.celebrate {
 
-    animation: winnerGlow 1.25s ease-out;
+    animation: winnerGlow 1.2s ease-in-out infinite;
 
 }
 

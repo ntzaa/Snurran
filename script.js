@@ -216,6 +216,21 @@ function startApp() {
     },400);
 }
 
+function clearWinnerEffects() {
+
+    const winnerItems =
+        document.querySelectorAll(".winnerCelebrate");
+
+    winnerItems.forEach(item => {
+        item.classList.remove("winnerCelebrate");
+    });
+
+    const spinnerWindow =
+        document.getElementById("spinnerWindow");
+
+    spinnerWindow.classList.remove("celebrate");
+}
+
 function showView(viewId) {
 
     const views = document.querySelectorAll(".view");
@@ -230,6 +245,12 @@ function showView(viewId) {
         .classList.add("active");
 
     closeMenu();
+
+    if (viewId !== "homeView") {
+
+    clearWinnerEffects();
+
+}
 
     if (viewId === "filterView") {
 
@@ -479,7 +500,7 @@ venueFavoriteButton.onclick = () => {
 
     } else {
 
-        favorites.push(currentVenue);
+        favorites.unshift(currentVenue);
 
     }
 
@@ -590,7 +611,7 @@ result.addEventListener("click", () => {
         return;
     }
 
-    favorites.push(venue);
+    favorites.unshift(venue);
 
     renderFavorites();
 
@@ -815,7 +836,7 @@ favoriteButton.addEventListener("click", function (event) {
 
     } else {
 
-        favorites.push(venue);
+        favorites.unshift(venue);
 
     }
 

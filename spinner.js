@@ -331,22 +331,13 @@ function toggleSpin() {
 
     winnerItem.classList.add("winnerCelebrate");
 
-    setTimeout(() => {
-
-        winnerItem.classList.remove("winnerCelebrate");
-
-    }, 900);
 
     const spinnerWindow =
         document.getElementById("spinnerWindow");
 
     spinnerWindow.classList.add("celebrate");
 
-    setTimeout(() => {
 
-        spinnerWindow.classList.remove("celebrate");
-
-    }, 900);
 
     setTimeout(() => {
 
