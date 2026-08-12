@@ -372,6 +372,19 @@ function capitalize(text) {
 
 }
 
+function formatTag(tag) {
+
+    const tagNames = {
+
+        ol: "Öl",
+        vin: "Vin",
+        cocktail: "Cocktail",
+        nattliv: "Nattliv"
+
+    };
+
+    return tagNames[tag] || capitalize(tag);
+}
 
 function showVenue() {
 
@@ -395,23 +408,23 @@ venueGoogleLink.href =
     "https://www.google.com/search?q=" +
     encodeURIComponent(googleSearch);
 
-    document.getElementById("venueDescription").innerHTML = `
+document.getElementById("venueDescription").innerHTML = `
 
 <div class="infoRow infoRowTwoColumns">
-
-    <div>
-
-        <strong>Kategori</strong><br>
-
-        ${capitalize(currentVenue.kategori)}
-
-    </div>
 
     <div>
 
         <strong>Pris</strong><br>
 
         ${capitalize(currentVenue.pris)}
+
+    </div>
+
+    <div>
+
+        <strong>Kategori</strong><br>
+
+        ${capitalize(currentVenue.kategori)}
 
     </div>
 
@@ -424,7 +437,7 @@ venueGoogleLink.href =
             <div class="tagContainer">
 
                 ${currentVenue.tags.map(tag =>
-                    `<span class="tag">${capitalize(tag)}</span>`
+                `<span class="tag">${formatTag(tag)}</span>`
                 ).join("")}
 
             </div>

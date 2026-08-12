@@ -352,7 +352,7 @@ function toggleSpin() {
 
         buttonMode = "venue";
 
-        randomButton.textContent = "GÅ TILL RESTAURANG";
+        randomButton.textContent = "VISA STÄLLET";
 
         randomButton.classList.remove("buttonHidden");
 
