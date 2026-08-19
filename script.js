@@ -123,7 +123,7 @@ document
 // Ladda venues
 // ===============================
 
-fetch("data/venues.json")
+fetch("data/venuesStockholm.json")
 .then(response => response.json())
 .then(venueData => {
 
@@ -293,7 +293,7 @@ function updateActiveFilters() {
 
     const activeFilters = [
         ...filters.categories,
-        ...filters.tags,
+        ...filters.properties,
         ...filters.prices,
         ...filters.districts
     ];
@@ -445,13 +445,15 @@ document.getElementById("venueDescription").innerHTML = `
 
     <div class="infoRow venueTypePrice">
 
-        <strong>
-            ${capitalize(currentVenue.pris)}
-            ·
-            ${capitalize(currentVenue.kategori)}
-        </strong>
+    <strong>
+        ${capitalize(currentVenue.pris)}
+        ·
+        ${currentVenue.kategorier
+            .map(kategori => capitalize(kategori))
+            .join(" · ")}
+    </strong>
 
-    </div>
+</div>
            
 
 <div class="infoRow venueDistrict">
@@ -528,15 +530,21 @@ function getSelectedFilters() {
         categories: [
 
             typeBar.checked ? "bar" : null,
-            typeRestaurant.checked ? "restaurang" : null
+            typeRestaurant.checked ? "restaurang" : null,
+            typeNightclub.checked ? "nattklubb" : null
 
         ].filter(Boolean),
 
-        tags: [
+        properties: [
 
-            typeCocktail.checked ? "cocktail" : null,
-            typeWine.checked ? "vin" : null,
-            typeNightclub.checked ? "nattliv" : null
+            propertyCocktail.checked ? "cocktailbar" : null,
+            propertyWine.checked ? "vinbar" : null,
+            propertyHotelBar.checked ? "hotellbar" : null,
+            propertyOutdoor.checked ? "uteservering" : null,
+            propertyRooftop.checked ? "takbar" : null,
+            propertyLiveMusic.checked ? "livemusik" : null,
+            propertyQuiz.checked ? "quiz" : null
+
 
         ].filter(Boolean),
 
@@ -555,15 +563,12 @@ function getSelectedFilters() {
             districtVasastan.checked ? "vasastan" : null,
             districtOstermalm.checked ? "ostermalm" : null,
             districtKungsholmen.checked ? "kungsholmen" : null,
-            districtGamlaStan.checked ? "gamla_stan" : null,
-        
+            districtGamlaStan.checked ? "gamla_stan" : null
 
         ].filter(Boolean)
 
-    
     };
 
-    
 }
 
 function searchFavorites() {
@@ -874,7 +879,7 @@ function analyzeVenues() {
         districts: {},
         tags: {},
         missing: {
-            kategori: [],
+            kategorier: [],
             pris: [],
             tags: []
         }
@@ -883,12 +888,20 @@ function analyzeVenues() {
     venues.forEach(venue => {
 
         // Kategori
-        if (venue.kategori) {
-            stats.categories[venue.kategori] =
-                (stats.categories[venue.kategori] || 0) + 1;
-        } else {
-            stats.missing.kategori.push(venue.namn);
-        }
+        if (Array.isArray(venue.kategorier) && venue.kategorier.length > 0) {
+
+    venue.kategorier.forEach(kategori => {
+
+        stats.categories[kategori] =
+            (stats.categories[kategori] || 0) + 1;
+
+    });
+
+} else {
+
+    stats.missing.kategorier.push(venue.namn);
+
+}
 
         // Pris
         if (venue.pris) {
@@ -939,8 +952,8 @@ function analyzeVenues() {
     console.log("\n🏷️ Taggar");
     console.table(stats.tags);
 
-    console.log("\n⚠️ Saknar kategori:", stats.missing.kategori.length);
-    console.log(stats.missing.kategori);
+    console.log("\n⚠️ Saknar kategorier:", stats.missing.kategorier.length);
+    console.log(stats.missing.kategorier);
 
     console.log("\n⚠️ Saknar pris:", stats.missing.pris.length);
     console.log(stats.missing.pris);

@@ -90,24 +90,52 @@ function getFilteredVenues() {
 
     const result = venues.filter(venue => {
 
+        // ===============================
+        // Typ — OR
+        // ===============================
+
         const categoryMatch =
             filters.categories.length === 0 ||
-            filters.categories.includes(venue.kategori);
+            venue.kategorier.some(kategori =>
+            filters.categories.includes(kategori)
+            );
 
-        const tagMatch =
-            filters.tags.length === 0 ||
-            venue.tags.some(tag => filters.tags.includes(tag));
+
+        // ===============================
+        // Egenskaper — AND
+        // ===============================
+
+        const propertyMatch =
+            filters.properties.length === 0 ||
+            filters.properties.every(property =>
+                venue.tags.includes(property)
+            );
+
+
+        // ===============================
+        // Pris — OR
+        // ===============================
 
         const priceMatch =
             filters.prices.length === 0 ||
             filters.prices.includes(venue.pris);
 
+
+        // ===============================
+        // Stadsdel — OR
+        // ===============================
+
         const districtMatch =
             filters.districts.length === 0 ||
             filters.districts.includes(venue.stadsdel);
 
+
+        // ===============================
+        // Alla filtergrupper — AND
+        // ===============================
+
         return categoryMatch &&
-               tagMatch &&
+               propertyMatch &&
                priceMatch &&
                districtMatch;
 
