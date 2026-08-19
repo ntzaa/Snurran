@@ -258,11 +258,8 @@ function showView(viewId) {
 
     closeMenu();
 
-    if (viewId !== "homeView") {
-
     clearWinnerEffects();
 
-}
 
     if (viewId === "filterView") {
 

@@ -166,37 +166,39 @@ function buildSpinnerSequence(names, winnerName = null) {
 
 
     for (
-        let i = 0;
-        i < WINNER_INDEX;
-        i++
-    ) {
+    let i = 0;
+    i < WINNER_INDEX;
+    i++
+) {
 
-        let name =
-            randomFromArray(names);
+    let name =
+        randomFromArray(names);
 
-        // Försök undvika att vinnaren dyker upp
-        // precis före den riktiga vinnaren.
-        if (
-            names.length > 1 &&
-            name === winnerName
+    // Undvik:
+    // 1. samma venue två gånger i rad
+    // 2. vinnaren innan den riktiga vinnarraden
+
+    if (names.length > 1) {
+
+        let attempts = 0;
+
+        while (
+            (
+                name === sequence[sequence.length - 1] ||
+                name === winnerName
+            ) &&
+            attempts < 20
         ) {
 
-            let attempts = 0;
+            name =
+                randomFromArray(names);
 
-            while (
-                name === winnerName &&
-                attempts < 5
-            ) {
-
-                name =
-                    randomFromArray(names);
-
-                attempts++;
-            }
+            attempts++;
         }
-
-        sequence.push(name);
     }
+
+    sequence.push(name);
+}
 
 
     // -------------------------------------------------
@@ -213,13 +215,30 @@ function buildSpinnerSequence(names, winnerName = null) {
     // -------------------------------------------------
 
     while (
-        sequence.length < VISIBLE_SEQUENCE
-    ) {
+    sequence.length < VISIBLE_SEQUENCE
+) {
 
-        sequence.push(
-            randomFromArray(names)
-        );
+    let name =
+        randomFromArray(names);
+
+    if (names.length > 1) {
+
+        let attempts = 0;
+
+        while (
+            name === sequence[sequence.length - 1] &&
+            attempts < 20
+        ) {
+
+            name =
+                randomFromArray(names);
+
+            attempts++;
+        }
     }
+
+    sequence.push(name);
+}
 
 
     spinnerList.innerHTML =
