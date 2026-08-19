@@ -1,10 +1,29 @@
 // ===============================
-// Spinner
+// SNURRAN - OPTIMERAD SPINNER
 // ===============================
+//
+// Den här versionen använder en liten virtuell sekvens
+// i DOM istället för att skapa hela venues-listan x 20.
+//
+// 723 venues = fortfarande 723 venues i JavaScript.
+// DOM = endast ett begränsat antal spinnerItems.
+//
 
 const ITEM_HEIGHT = 64;
-const REPEATS = 20;
-const START_LOOP = 10;
+
+// Antal visuella rader som faktiskt existerar i DOM.
+// 41 räcker gott för att skapa en lång och övertygande
+// spinnersekvens utan tusentals DOM-element.
+const VISIBLE_SEQUENCE = 41;
+
+// Hur långt in i den visuella sekvensen vinnaren placeras.
+const WINNER_INDEX = 34;
+
+// Hur många slumpmässiga "fejkvarv" vi visar innan vinnaren.
+// Detta ersätter den gamla REPEATS = 20.
+const RANDOM_BEFORE_WINNER = 33;
+
+const START_LOOP = 0;
 
 let currentVenue = null;
 let currentIndex = 0;
@@ -27,50 +46,192 @@ function shuffle(array) {
 
     for (let i = copy.length - 1; i > 0; i--) {
 
-        const j = Math.floor(Math.random() * (i + 1));
+        const j =
+            Math.floor(Math.random() * (i + 1));
 
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-
+        [copy[i], copy[j]] =
+            [copy[j], copy[i]];
     }
 
     return copy;
-
 }
 
 
 // ===============================
-// Bygg spinner
+// Slumpa ett venue
 // ===============================
 
-function buildSpinner(names) {
-  
-    console.log("Bygger spinner med", names.length, "restauranger");
+function randomFromArray(array) {
+
+    if (!array || array.length === 0) {
+        return null;
+    }
+
+    return array[
+        Math.floor(Math.random() * array.length)
+    ];
+}
+
+
+// ===============================
+// Bygg en liten virtuell sekvens
+// ===============================
+//
+// GAMLA VERSIONEN:
+//
+// 723 venues × 20 repetitioner
+// = 14 460 DOM-element.
+//
+// NYA VERSIONEN:
+//
+// ungefär 41 DOM-element totalt.
+//
+// Vi behöver inte visa alla venues.
+// Vi behöver bara skapa illusionen av
+// att spinnern passerar många alternativ.
+//
+
+function buildSpinnerSequence(names, winnerName = null) {
 
     const spinnerList =
         document.getElementById("spinnerList");
 
-    let html = "";
-
-    for (let i = 0; i < REPEATS; i++) {
-
-        names.forEach(name => {
-
-    html += `
-        <div class="spinnerItem">
-            ${hasSpun ? name : "❓❓❓"}
-        </div>
-    `;
-
-});
-
+    if (!spinnerList) {
+        return;
     }
 
-    spinnerList.innerHTML = html;
-    spinnerList.classList.toggle(
-    "spinnerIdle",
-    !hasSpun
-);
+    if (!names || names.length === 0) {
 
+        spinnerList.innerHTML = `
+            <div class="spinnerNoResult">
+                <strong>INGET RESULTAT</strong>
+                <span>Prova att ändra dina filter.</span>
+            </div>
+        `;
+
+        spinnerList.style.transition = "none";
+        spinnerList.style.transform =
+            "translateY(0)";
+
+        return;
+    }
+
+
+    // -------------------------------------------------
+    // Om vi inte har en vinnare ännu:
+    // visa bara en liten dold/neutral startsekvens.
+    // -------------------------------------------------
+
+    if (!winnerName) {
+
+        const startNames = [];
+
+        for (
+            let i = 0;
+            i < VISIBLE_SEQUENCE;
+            i++
+        ) {
+
+            startNames.push(
+                randomFromArray(names)
+            );
+        }
+
+        spinnerList.innerHTML =
+            startNames
+                .map(name => `
+                    <div class="spinnerItem">
+                        ❓❓❓
+                    </div>
+                `)
+                .join("");
+
+        spinnerList.classList.toggle(
+            "spinnerIdle",
+            !hasSpun
+        );
+
+        return;
+    }
+
+
+    // -------------------------------------------------
+    // Vi har en vinnare.
+    //
+    // Skapa en kort sekvens där vinnaren ligger
+    // långt mot slutet.
+    // -------------------------------------------------
+
+    const sequence = [];
+
+
+    for (
+        let i = 0;
+        i < WINNER_INDEX;
+        i++
+    ) {
+
+        let name =
+            randomFromArray(names);
+
+        // Försök undvika att vinnaren dyker upp
+        // precis före den riktiga vinnaren.
+        if (
+            names.length > 1 &&
+            name === winnerName
+        ) {
+
+            let attempts = 0;
+
+            while (
+                name === winnerName &&
+                attempts < 5
+            ) {
+
+                name =
+                    randomFromArray(names);
+
+                attempts++;
+            }
+        }
+
+        sequence.push(name);
+    }
+
+
+    // -------------------------------------------------
+    // Den riktiga vinnaren.
+    // -------------------------------------------------
+
+    sequence.push(winnerName);
+
+
+    // -------------------------------------------------
+    // Några sista rader efter vinnaren.
+    // Dessa gör att den inte känns som att den
+    // "bara åkte till ett slut".
+    // -------------------------------------------------
+
+    while (
+        sequence.length < VISIBLE_SEQUENCE
+    ) {
+
+        sequence.push(
+            randomFromArray(names)
+        );
+    }
+
+
+    spinnerList.innerHTML =
+        sequence
+            .map(name => `
+                <div class="spinnerItem">
+                    ${name}
+                </div>
+            `)
+            .join("");
+
+    spinnerList.classList.remove("spinnerIdle");
 }
 
 
@@ -80,71 +241,70 @@ function buildSpinner(names) {
 
 function getFilteredVenues() {
 
-    const filters = getSelectedFilters();
+    const filters =
+        getSelectedFilters();
 
     if (favoritesOnly.checked) {
         return favorites;
     }
 
-    console.log("Filters:", filters);
+    const result =
+        venues.filter(venue => {
 
-    const result = venues.filter(venue => {
+            // ===============================
+            // Typ — OR
+            // ===============================
 
-        // ===============================
-        // Typ — OR
-        // ===============================
+            const categoryMatch =
+                filters.categories.length === 0 ||
+                venue.kategorier.some(kategori =>
+                    filters.categories.includes(kategori)
+                );
 
-        const categoryMatch =
-            filters.categories.length === 0 ||
-            venue.kategorier.some(kategori =>
-            filters.categories.includes(kategori)
+
+            // ===============================
+            // Egenskaper — AND
+            // ===============================
+
+            const propertyMatch =
+                filters.properties.length === 0 ||
+                filters.properties.every(property =>
+                    venue.tags.includes(property)
+                );
+
+
+            // ===============================
+            // Pris — OR
+            // ===============================
+
+            const priceMatch =
+                filters.prices.length === 0 ||
+                filters.prices.includes(venue.pris);
+
+
+            // ===============================
+            // Stadsdel — OR
+            // ===============================
+
+            const districtMatch =
+                filters.districts.length === 0 ||
+                filters.districts.includes(venue.stadsdel);
+
+
+            // ===============================
+            // Alla filtergrupper — AND
+            // ===============================
+
+            return (
+                categoryMatch &&
+                propertyMatch &&
+                priceMatch &&
+                districtMatch
             );
 
-
-        // ===============================
-        // Egenskaper — AND
-        // ===============================
-
-        const propertyMatch =
-            filters.properties.length === 0 ||
-            filters.properties.every(property =>
-                venue.tags.includes(property)
-            );
-
-
-        // ===============================
-        // Pris — OR
-        // ===============================
-
-        const priceMatch =
-            filters.prices.length === 0 ||
-            filters.prices.includes(venue.pris);
-
-
-        // ===============================
-        // Stadsdel — OR
-        // ===============================
-
-        const districtMatch =
-            filters.districts.length === 0 ||
-            filters.districts.includes(venue.stadsdel);
-
-
-        // ===============================
-        // Alla filtergrupper — AND
-        // ===============================
-
-        return categoryMatch &&
-               propertyMatch &&
-               priceMatch &&
-               districtMatch;
-
-    });
-
-    console.log("Antal restauranger:", result.length);
+        });
 
     return result;
-
 }
 
 
@@ -155,102 +315,144 @@ function getFilteredVenues() {
 function pickWinner(filtered) {
 
     const winnerIndex =
-        Math.floor(Math.random() * filtered.length);
+        Math.floor(
+            Math.random() * filtered.length
+        );
 
     currentVenue =
         filtered[winnerIndex];
 
     return winnerIndex;
-
 }
 
-// ===============================
-// Räkna ut målposition
-// ===============================
-
-function calculateTargetIndex(filtered, winnerIndex) {
-
-    let currentIndex =
-        Math.floor(currentOffset / ITEM_HEIGHT);
-
-    // Om vi börjar närma oss slutet,
-    // flytta tillbaka till mitten.
-    if (currentIndex > filtered.length * 15) {
-
-        currentIndex =
-            filtered.length * START_LOOP;
-
-        currentOffset =
-            currentIndex * ITEM_HEIGHT;
-
-        const spinnerList =
-            document.getElementById("spinnerList");
-
-        spinnerList.style.transition = "none";
-        spinnerList.style.transform =
-            `translateY(-${currentOffset}px)`;
-
-    }
-
-    const loops =
-        Math.floor(Math.random() * 4) + 4;
-
-    return (
-        currentIndex +
-        filtered.length * loops +
-        winnerIndex
-    );
-
-}
 
 // ===============================
 // Uppdatera spinner
 // ===============================
+//
+// Viktig skillnad:
+//
+// Den här funktionen skapar ALDRIG
+// hundratals/tusentals DOM-element.
+//
+// Den bygger bara en liten visuell sekvens.
+//
 
 function refreshSpinner() {
 
-    spinnerOrder = shuffle(getFilteredVenues());
+    spinnerOrder =
+        shuffle(
+            getFilteredVenues()
+        );
+
 
     const spinnerList =
         document.getElementById("spinnerList");
 
-if (spinnerOrder.length === 0) {
 
-    spinnerList.innerHTML = `
-        <div class="spinnerNoResult">
-            <strong>INGET RESULTAT</strong>
-            <span>Prova att ändra dina filter.</span>
-        </div>
-    `;
+    if (!spinnerList) {
+        return;
+    }
 
-    spinnerList.style.transition = "none";
-    spinnerList.style.transform = "translateY(0)";
 
-    randomButton.classList.add("buttonHidden");
+    // ===============================
+    // Inget resultat
+    // ===============================
 
-    return;
-}
+    if (spinnerOrder.length === 0) {
 
-randomButton.classList.remove("buttonHidden");
+        spinnerList.innerHTML = `
+            <div class="spinnerNoResult">
+                <strong>INGET RESULTAT</strong>
+                <span>Prova att ändra dina filter.</span>
+            </div>
+        `;
 
-buildSpinner(
-    spinnerOrder.map(v => v.namn)
-);
+        spinnerList.style.transition =
+            "none";
 
-    const firstItem =
-        document.querySelector(".spinnerItem");
+        spinnerList.style.transform =
+            "translateY(0)";
 
-    const startOffset =
-        START_LOOP *
-        spinnerOrder.length *
-        ITEM_HEIGHT;
+        randomButton.classList.add(
+            "buttonHidden"
+        );
 
-    spinnerList.style.transition = "none";
+        return;
+    }
+
+
+    randomButton.classList.remove(
+        "buttonHidden"
+    );
+
+
+    // ===============================
+    // Startsekvens
+    // ===============================
+
+    buildSpinnerSequence(
+        spinnerOrder.map(v => v.namn)
+    );
+
+
+    spinnerList.style.transition =
+        "none";
 
     spinnerList.style.transform =
-        `translateY(-${startOffset}px)`;
+        "translateY(0)";
 
-    currentOffset = startOffset;
+    currentOffset = 0;
+}
+
+
+// ===============================
+// Skapa snurrsekvens
+// ===============================
+
+function prepareSpinSequence(
+    filtered,
+    winnerIndex
+) {
+
+    const spinnerList =
+        document.getElementById("spinnerList");
+
+    if (!spinnerList) {
+        return;
+    }
+
+
+    const winner =
+        filtered[winnerIndex];
+
+
+    if (!winner) {
+        return;
+    }
+
+
+    const names =
+        filtered.map(
+            venue => venue.namn
+        );
+
+
+    // Bygg den lilla virtuella listan.
+    buildSpinnerSequence(
+        names,
+        winner.namn
+    );
+
+
+    // Säkerställ att vi börjar från toppen.
+    spinnerList.style.transition =
+        "none";
+
+    spinnerList.style.transform =
+        "translateY(0)";
+
+    currentOffset = 0;
 }
 
 
@@ -260,38 +462,99 @@ buildSpinner(
 
 function randomVenue() {
 
-        hasSpun = true;
-        refreshSpinner();
+    hasSpun = true;
 
-const filtered = spinnerOrder;
 
-if (filtered.length === 0) {
-    spinning = false;
-    return;
-}
+    // OBS:
+    // Vi behöver inte längre bygga om en
+    // gigantisk lista här.
+    //
+    // Vi hämtar bara det aktuella urvalet.
+
+    spinnerOrder =
+        shuffle(
+            getFilteredVenues()
+        );
+
+
+    const filtered =
+        spinnerOrder;
+
+
+    if (filtered.length === 0) {
+
+        spinning = false;
+        return;
+    }
+
 
     const spinnerList =
         document.getElementById("spinnerList");
 
+
     const spinnerWindow =
         document.getElementById("spinnerWindow");
 
-    const windowHeight =
-        spinnerWindow.clientHeight;
 
-const winnerIndex =
-    pickWinner(filtered);
+    if (!spinnerList || !spinnerWindow) {
+        spinning = false;
+        return;
+    }
 
 
-const targetIndex =
-    calculateTargetIndex(
+    // ===============================
+    // Välj vinnare
+    // ===============================
+
+    const winnerIndex =
+        pickWinner(filtered);
+
+
+    const winner =
+        filtered[winnerIndex];
+
+
+    if (!winner) {
+        spinning = false;
+        return;
+    }
+
+
+    // ===============================
+    // Bygg liten virtuell sekvens
+    // ===============================
+
+    prepareSpinSequence(
         filtered,
         winnerIndex
     );
 
-window.lastTargetIndex = targetIndex;
 
-const CENTER_ADJUST = 0;
+    // ===============================
+    // Målposition
+    // ===============================
+    //
+    // Vinnaren ligger på WINNER_INDEX.
+    // Vi behöver alltså bara flytta listan
+    // cirka 34 rader.
+    //
+    // Inte hundratusentals pixlar.
+    //
+
+    const windowHeight =
+        spinnerWindow.clientHeight;
+
+
+    const targetIndex =
+        WINNER_INDEX;
+
+
+    window.lastTargetIndex =
+        targetIndex;
+
+
+    const CENTER_ADJUST = 0;
+
 
     const targetOffset =
         targetIndex * ITEM_HEIGHT -
@@ -300,7 +563,18 @@ const CENTER_ADJUST = 0;
         CENTER_ADJUST;
 
 
-    randomButton.classList.add("buttonHidden");
+    currentIndex =
+        targetIndex;
+
+
+    randomButton.classList.add(
+        "buttonHidden"
+    );
+
+
+    // ===============================
+    // Starta animationen
+    // ===============================
 
     requestAnimationFrame(() => {
 
@@ -312,74 +586,196 @@ const CENTER_ADJUST = 0;
             spinnerList.style.transform =
                 `translateY(-${targetOffset}px)`;
 
+            currentOffset =
+                targetOffset;
         });
 
     });
-
 }
 
+
+// ===============================
+// Init
+// ===============================
 
 function initSpinner() {
 
     currentOffset = 0;
+
+    currentIndex = 0;
+
     spinning = false;
 
+    hasSpun = false;
+
+    buttonMode = "spin";
+
+    currentVenue = null;
+
+    spinnerOrder = [];
 }
+
+
+// ===============================
+// Toggle SNURRA / VISA STÄLLET
+// ===============================
 
 function toggleSpin() {
 
+    // ===============================
+    // VISA STÄLLET
+    // ===============================
+
     if (buttonMode === "venue") {
+
         showVenue();
+
         return;
     }
 
-    if (spinning)
+
+    // ===============================
+    // Förhindra dubbla klick
+    // ===============================
+
+    if (spinning) {
         return;
+    }
+
 
     spinning = true;
 
+
+    // ===============================
+    // Starta snurr
+    // ===============================
+
     randomVenue();
+
 
     const spinnerList =
         document.getElementById("spinnerList");
 
-    spinnerList.ontransitionend = () => {
 
-            console.log("transitionend!");
+    if (!spinnerList) {
+
+        spinning = false;
+
+        return;
+    }
+
+
+    // ===============================
+    // Vänta på att CSS-transitionen
+    // verkligen är klar.
+    // ===============================
 
     spinnerList.ontransitionend = null;
 
-    spinning = false;
 
-    const winnerItems =
-        document.querySelectorAll(".spinnerItem");
+    spinnerList.addEventListener(
+        "transitionend",
+        function handleTransition(event) {
 
-    const winnerItem =
-        winnerItems[window.lastTargetIndex];
-
-    winnerItem.classList.add("winnerCelebrate");
-
-
-    const spinnerWindow =
-        document.getElementById("spinnerWindow");
-
-    spinnerWindow.classList.add("celebrate");
+            // Vi bryr oss bara om transform.
+            if (
+                event.propertyName !==
+                "transform"
+            ) {
+                return;
+            }
 
 
+            spinnerList.removeEventListener(
+                "transitionend",
+                handleTransition
+            );
 
-    setTimeout(() => {
 
-        buttonMode = "venue";
+            // ===============================
+            // Animation klar
+            // ===============================
 
-        randomButton.textContent = "VISA STÄLLET";
+            spinning = false;
 
-        randomButton.classList.remove("buttonHidden");
 
-    }, 1000);
+            const winnerItems =
+                spinnerList.querySelectorAll(
+                    ".spinnerItem"
+                );
 
-};
 
+            const winnerItem =
+                winnerItems[WINNER_INDEX];
+
+
+            if (winnerItem) {
+
+                winnerItem.classList.add(
+                    "winnerCelebrate"
+                );
+            }
+
+
+            const spinnerWindow =
+                document.getElementById(
+                    "spinnerWindow"
+                );
+
+
+            if (spinnerWindow) {
+
+                spinnerWindow.classList.add(
+                    "celebrate"
+                );
+            }
+
+
+            // ===============================
+            // Byt knapp till:
+            // VISA STÄLLET
+            // ===============================
+
+            setTimeout(() => {
+
+                buttonMode = "venue";
+
+                randomButton.textContent =
+                    "VISA STÄLLET";
+
+                randomButton.classList.remove(
+                    "buttonHidden"
+                );
+
+            }, 1000);
+
+        }
+    );
 }
 
 
+// ===============================
+// Export / global tillgänglighet
+// ===============================
+//
+// script.js använder dessa funktioner
+// direkt, så de måste ligga globalt.
+//
 
+window.initSpinner =
+    initSpinner;
+
+window.refreshSpinner =
+    refreshSpinner;
+
+window.buildSpinner =
+    buildSpinnerSequence;
+
+window.toggleSpin =
+    toggleSpin;
+
+window.randomVenue =
+    randomVenue;
+
+window.getFilteredVenues =
+    getFilteredVenues;
