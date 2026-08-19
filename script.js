@@ -127,7 +127,19 @@ fetch("data/venuesStockholm.json")
 .then(response => response.json())
 .then(venueData => {
 
-    venues = venueData;
+    venues = venueData.map(venue => ({
+        ...venue,
+
+        kategorier:
+            Array.isArray(venue.kategorier)
+                ? venue.kategorier
+                : [],
+
+        tags:
+            Array.isArray(venue.tags)
+                ? venue.tags
+                : []
+    }));
 
     initSpinner();
 
@@ -435,9 +447,9 @@ document.getElementById("venueDescription").innerHTML = `
 
         <div class="tagContainer">
 
-                ${currentVenue.tags.map(tag =>
-                `<span class="tag">${formatTag(tag)}</span>`
-                ).join("")}
+                ${(currentVenue.tags || []).map(tag =>
+                    `<span class="tag">${formatTag(tag)}</span>`
+                    ).join("")}
 
         </div>
 
@@ -448,7 +460,7 @@ document.getElementById("venueDescription").innerHTML = `
     <strong>
         ${capitalize(currentVenue.pris)}
         ·
-        ${currentVenue.kategorier
+        ${(currentVenue.kategorier || [])
             .map(kategori => capitalize(kategori))
             .join(" · ")}
     </strong>

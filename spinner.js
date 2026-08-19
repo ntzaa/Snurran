@@ -502,22 +502,23 @@ function randomVenue() {
     }
 
 
-    // ===============================
-    // Välj vinnare
-    // ===============================
+// ===============================
+// Välj vinnare
+// ===============================
 
-    const winnerIndex =
-        pickWinner(filtered);
+const winnerIndex =
+    Math.floor(Math.random() * filtered.length);
 
+currentVenue =
+    filtered[winnerIndex];
 
-    const winner =
-        filtered[winnerIndex];
+const winner =
+    currentVenue;
 
-
-    if (!winner) {
-        spinning = false;
-        return;
-    }
+if (!winner) {
+    spinning = false;
+    return;
+}
 
 
     // ===============================
@@ -581,7 +582,7 @@ function randomVenue() {
         requestAnimationFrame(() => {
 
             spinnerList.style.transition =
-                "transform 5s cubic-bezier(.08,.85,.15,1)";
+                "transform 7s cubic-bezier(.05,.85,.45,1)";
 
             spinnerList.style.transform =
                 `translateY(-${targetOffset}px)`;
