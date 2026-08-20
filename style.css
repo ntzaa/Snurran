@@ -302,7 +302,7 @@ button:hover{
     left: 0;
 
     width: 100%;
-    height: 75px;
+    height: 85px;
 
     background: #1d1d1d;
 
@@ -432,6 +432,14 @@ button:hover{
    Filter Category Card
 ================================ */
 
+#filterTitle {
+    font-size: 26px;
+}
+
+#filterSubtitle {
+    font-size: 14px;
+}
+
 .filterCard{
 
     background:#232323;
@@ -449,7 +457,7 @@ button:hover{
 
 .filterCard h3{
 
-    font-size:18px;
+    font-size:16px;
 
     margin-bottom:20px;
 
@@ -467,7 +475,7 @@ button:hover{
 
     cursor:pointer;
 
-    font-size:18px;
+    font-size:14px;
 
 }
 
