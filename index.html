@@ -73,46 +73,17 @@
 </div>
 </div>
 
+<nav id="bottomNav">
 
-    <!-- ===============================
-              Hamburgermeny
-    ================================ -->
+    <div id="homeButton">⌂</div>
 
+    <div id="filterButton">⌕</div>
 
-<div id="menuButton">
+    <div id="favoritesButton">♡</div>
 
-    ☰
-
-</div>
-
-<nav id="sideMenu">
-
-    <div id="closeButton">
-        ✕
-    </div>
-
-    
-
-   <ul>
-
-    <li id="homeButton">🏠 Startsida</li>
-
-    <li id="filterButton">🎯 Filter</li>
-
-    <li id="favoritesButton">⭐ Favoriter</li>
-
-    <li id="venueHistoryButton">🕘 Historik</li>
-
-    <li id="settingsButton">⚙ Inställningar</li>
-
-    <li id="aboutButton">ℹ Om</li>
-
-</ul>
+    <div id="settingsButton">⚙</div>
 
 </nav>
-
-
-<div id="overlay"></div>
 
 <div id="app">
 
@@ -304,11 +275,21 @@
 
 
 
-            <h1>Favoriter</h1>
+            <div class="favoritesTabs">
 
-            <p class="subtitle">
-                Lägg till favoriter för att bygga din egen snurra.
-            </p>
+    <div id="favoritesTab" class="favoritesTab active">
+        Favoriter
+    </div>
+
+    <div id="historyTab" class="favoritesTab">
+        Historik
+    </div>
+
+</div>
+
+            <p id="favoritesSubtitle" class="subtitle">
+    Lägg till favoriter för att bygga din egen snurra.
+</p>
 
             <input
                 type="search"
@@ -318,10 +299,21 @@
 
                 <div id="favoriteSearchResults"></div>
 
-                <h2 class="favoritesTitle">Dina favoriter</h2>
+                <h2 id="favoritesTitle" class="favoritesTitle">Dina favoriter</h2>
 
                 <div id="favoritesList"></div>
 
+                <div id="historyContent">
+
+    <p class="subtitle">
+        Senast besökta ställen.
+    </p>
+
+    <h2 class="favoritesTitle">Din historik</h2>
+
+    <div id="venueHistoryList"></div>
+
+</div>
 
         </div>
 
@@ -333,7 +325,7 @@
               Historik
     ================================ -->
 
-<div id="venueHistoryView" class="view">
+<div id="VenueHistoryView" class="view">
 
     <div class="pageContent">
 
@@ -364,24 +356,133 @@
 
         <div class="pageHeader">
 
-            <h1>Inställningar</h1>
+    <div class="settingsTabs">
 
+        <div id="settingsTab" class="settingsTab active">
+            Inställningar
         </div>
 
-        <div class="filterCard settingsCard">
-
-            <h3>Stad</h3>
-
-            <label for="citySelect" class="settingsLabel">
-                Välj vilken stad Snurran ska använda.
-            </label>
-
-            <select id="citySelect" class="citySelect">
-                <option value="stockholm">Stockholm</option>
-                <option value="goteborg">Göteborg</option>
-            </select>
-
+        <div id="aboutTab" class="settingsTab">
+            Om
         </div>
+
+    </div>
+
+</div>
+
+        <div id="settingsContent">
+
+    <div class="filterCard settingsCard">
+
+        <h3>Stad</h3>
+
+        <label for="citySelect" class="settingsLabel">
+            Välj vilken stad Snurran ska använda.
+        </label>
+
+        <select id="citySelect" class="citySelect">
+            <option value="stockholm">Stockholm</option>
+            <option value="goteborg">Göteborg</option>
+        </select>
+
+    </div>
+
+</div>
+
+<div id="aboutContent">
+
+    <div class="pageHeader">
+
+        <h1>Så fungerar SNURRAN</h1>
+
+        <p class="subtitle">
+            SNURRAN är en app för dig som inte kan bestämma dig.
+        </p>
+
+    </div>
+
+    <div class="filterCard">
+
+        <h3>🏠 Startsida</h3>
+
+        <p>
+            Tryck på <strong>SNURRA</strong> för att
+            slumpa fram ett ställe utifrån dina valda filter
+            så att du vet var du ska gå!
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <h3>🎯 Filter</h3>
+
+        <p>
+            Använd <strong>Filter</strong> för att begränsa
+            urvalet efter typ, pris och stadsdel.
+        </p>
+
+        <br>
+
+        <p>
+            Du kan också välja att endast snurra bland
+            dina favoritställen.
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <h3>⭐ Favoriter</h3>
+
+        <p>
+            Hittat ett ställe du gillar?
+            Här kan du söka efter ditt favoritställe och spara det direkt.
+            Du kan också spara ställen som du snurrat fram!
+            Tryck på ❤️ för att spara det som favorit.
+        </p>
+
+        <br>
+
+        <p>
+            Dina senaste favoriter hamnar överst i listan.
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <h3>🕘 Historik</h3>
+
+        <p>
+            I <strong>Historik</strong> hittar du ställen
+            som du tidigare har snurrat fram.
+            Härifrån kan du också spara ställen som favoriter.
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <h3>❤️ Favoritställen</h3>
+
+        <p>
+            Vill du bara snurra bland dina favoriter?
+            Aktivera <strong>Snurra endast på dina favoriter</strong>
+            under Filter.
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <p>
+            <strong>Nu är det bara att börja snurra!</strong>
+        </p>
+
+    </div>
+
+</div>
 
     </div>
 

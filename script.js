@@ -40,7 +40,6 @@ const STOCKHOLM_DISTRICTS = [
     "ostermalm",
     "kungsholmen",
     "gamla_stan",
-    "slakthusomradet"
 ];
 
 const DISTRICT_NAMES = {
@@ -50,8 +49,6 @@ const DISTRICT_NAMES = {
     ostermalm: "Östermalm",
     kungsholmen: "Kungsholmen",
     gamla_stan: "Gamla stan",
-    slakthusomradet: "Slakthusområdet",
-    slakthusomradet: "Slakthusområdet",
     centrum: "Centrum",
     linne: "Linné",
     haga: "Haga",
@@ -242,7 +239,6 @@ randomButton.onclick = toggleSpin;
 console.log("toggleSpin =", toggleSpin);
 
 const homeButton = document.getElementById("homeButton");
-const menuButton = document.getElementById("menuButton");
 
 const filterBackButton =
     document.getElementById("filterBackButton");
@@ -250,9 +246,6 @@ const filterBackButton =
 const venueBackButton =
     document.getElementById("venueBackButton");
 
-const sideMenu = document.getElementById("sideMenu");
-const closeButton = document.getElementById("closeButton");
-const overlay = document.getElementById("overlay");
 
 const filterButton =
     document.getElementById("filterButton");
@@ -260,8 +253,25 @@ const filterButton =
 const favoritesButton =
     document.getElementById("favoritesButton"); 
 
-const venueHistoryButton =
-    document.getElementById("venueHistoryButton");
+
+const favoritesTitle =
+    document.getElementById("favoritesTitle");
+
+const favoritesSubtitle =
+    document.getElementById("favoritesSubtitle");
+
+const favoritesTab =
+    document.getElementById("favoritesTab");
+
+const historyTab =
+    document.getElementById("historyTab");
+
+const venueHistoryList =
+    document.getElementById("venueHistoryList");
+
+const historyContent =
+    document.getElementById("historyContent");
+
     
 const favoritesBackButton =
     document.getElementById("favoritesBackButton");
@@ -271,6 +281,20 @@ const favoriteSearch =
 
 const favoriteSearchResults =
     document.getElementById("favoriteSearchResults");
+
+
+const settingsTab =
+    document.getElementById("settingsTab");
+
+const aboutTab =
+    document.getElementById("aboutTab");
+
+const settingsContent =
+    document.getElementById("settingsContent");
+
+const aboutContent =
+    document.getElementById("aboutContent");
+
 
 const typeBar = document.getElementById("typeBar");
 const typeRestaurant =
@@ -330,6 +354,11 @@ favoriteSearch.addEventListener("input", searchFavorites);
 document
     .getElementById("introView")
     .addEventListener("click", startApp);
+
+
+favoritesTab.addEventListener("click", showFavoritesTab);
+
+historyTab.addEventListener("click", showHistoryTab);
 
 // ===============================
 // Ladda venues
@@ -500,10 +529,6 @@ function playSplashScreen() {
     const title =
         document.getElementById("splashTitle");
 
-    const menuButton =
-        document.getElementById("menuButton");
-
-        menuButton.classList.add("hidden");
 
     const text = "SNURRAN";
 
@@ -595,7 +620,6 @@ function showView(viewId) {
     document.getElementById(viewId)
         .classList.add("active");
 
-    closeMenu();
 
     clearWinnerEffects();
 
@@ -609,16 +633,6 @@ function showView(viewId) {
     if (viewId === "venueHistoryView") {
 
         renderHistory();
-
-    }
-
-    if (viewId === "venueView") {
-
-        menuButton.classList.add("hidden");
-
-    } else {
-
-        menuButton.classList.remove("hidden");
 
     }
 
@@ -659,27 +673,30 @@ function updateActiveFilters() {
             .join(" · ");
 }
 
-function openMenu() {
-
-    sideMenu.classList.add("open");
-    overlay.classList.add("open");
-    menuButton.classList.add("hidden");
-
-}
-
-
-function closeMenu() {
-
-    sideMenu.classList.remove("open");
-    overlay.classList.remove("open");
-    menuButton.classList.remove("hidden");
-
-}
-
 
 function showFilter() {
 
     showView("filterView");
+
+}
+
+function showSettingsTab() {
+
+    settingsContent.style.display = "block";
+    aboutContent.style.display = "none";
+
+    settingsTab.classList.add("active");
+    aboutTab.classList.remove("active");
+
+}
+
+function showAboutTab() {
+
+    settingsContent.style.display = "none";
+    aboutContent.style.display = "block";
+
+    settingsTab.classList.remove("active");
+    aboutTab.classList.add("active");
 
 }
 
@@ -688,6 +705,40 @@ function showFavorites() {
     renderFavorites();
 
     showView("favoritesView");
+
+    showFavoritesTab();
+
+}
+
+function showFavoritesTab() {
+
+    favoritesList.style.display = "block";
+    favoriteSearch.style.display = "block";
+    favoriteSearchResults.style.display = "block";
+    favoritesTitle.style.display = "block";
+    favoritesSubtitle.style.display = "block";
+
+    historyContent.style.display = "none";
+
+    favoritesTab.classList.add("active");
+    historyTab.classList.remove("active");
+
+}
+
+function showHistoryTab() {
+
+    renderHistory();
+
+    favoritesList.style.display = "none";
+    favoriteSearch.style.display = "none";
+    favoriteSearchResults.style.display = "none";
+    favoritesTitle.style.display = "none";
+    favoritesSubtitle.style.display = "none";
+
+    historyContent.style.display = "block";
+
+    favoritesTab.classList.remove("active");
+    historyTab.classList.add("active");
 
 }
 
@@ -719,6 +770,8 @@ function showSettings() {
     updateCityUI();
 
     showView("settingsView");
+
+    showSettingsTab();
 }
 
 function showAbout() {
@@ -1092,13 +1145,6 @@ citySelect.addEventListener("change", async () => {
 
 });
 
-// Slumpa
-// randomButton.addEventListener("click", randomVenue);
-
-// Meny
-menuButton.addEventListener("click", openMenu);
-closeButton.addEventListener("click", closeMenu);
-overlay.addEventListener("click", closeMenu);
 
 // Hem
 homeButton.addEventListener("click", showHome);
@@ -1109,15 +1155,12 @@ filterButton.addEventListener("click", showFilter);
 // Favoriter
 favoritesButton.addEventListener("click", showFavorites);
 
-// Historik
-venueHistoryButton.addEventListener("click", showVenueHistory);
-
 // Inställningar
 settingsButton.addEventListener("click", showSettings);
 
-// Om
-aboutButton.addEventListener("click", showAbout);
+settingsTab.addEventListener("click", showSettingsTab);
 
+aboutTab.addEventListener("click", showAboutTab);
 
 //Filtrera bort filter när favotitfilter är aktivt
 const favoritesOnly = document.getElementById("favoritesOnly");
