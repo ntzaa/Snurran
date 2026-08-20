@@ -6,232 +6,23 @@ let previousVenue = null;
 
 let venues = [];
 
-// ===============================
-// Städer
-// ===============================
-
-const CITIES = {
-    stockholm: {
-        namn: "Stockholm",
-        fil: "data/venuesStockholm.json",
-        stadsdelar: [
-            "sodermalm",
-            "norrmalm",
-            "vasastan",
-            "ostermalm",
-            "kungsholmen",
-            "gamla_stan",
-            "slakthusomradet"
-        ]
-    },
-
-    goteborg: {
-        namn: "Göteborg",
-        fil: "data/venuesGoteborg.json"
-    }
-};
-
-// Visningsnamn för stadsdelar.
-// JSON-värdena kan fortsätta vara maskinläsbara.
-const STOCKHOLM_DISTRICTS = [
-    "sodermalm",
-    "norrmalm",
-    "vasastan",
-    "ostermalm",
-    "kungsholmen",
-    "gamla_stan",
-    "slakthusomradet"
-];
-
-const DISTRICT_NAMES = {
-    sodermalm: "Södermalm",
-    norrmalm: "Norrmalm",
-    vasastan: "Vasastan",
-    ostermalm: "Östermalm",
-    kungsholmen: "Kungsholmen",
-    gamla_stan: "Gamla stan",
-    slakthusomradet: "Slakthusområdet",
-    slakthusomradet: "Slakthusområdet",
-    centrum: "Centrum",
-    linne: "Linné",
-    haga: "Haga",
-    majorna: "Majorna"
-};
-
-function formatDistrictName(district) {
-
-    if (DISTRICT_NAMES[district]) {
-        return DISTRICT_NAMES[district];
-    }
-
-    return district
-        .replace(/_/g, " ")
-        .replace(/^./, char => char.toUpperCase());
-}
-
-let currentCity =
-    localStorage.getItem("currentCity") || "stockholm";
-
-if (!CITIES[currentCity]) {
-    currentCity = "stockholm";
-}
-
-// ===============================
-// Favoriter & historik per stad
-// ===============================
-//
-// Vi använder nya, stadsseparerade localStorage-objekt.
-// Äldre versioner av Snurran sparade allt under:
-//
-//   "favorites"
-//   "spinHistory"
-//
-// Vid första körningen migreras dessa automatiskt till
-// Stockholm. Göteborg får en tom lista tills något sparas där.
-
-let favoritesByCity = {};
-let historyByCity = {};
-
 let favorites = [];
-let spinHistory = [];
 
 let previousView = "homeView";
 
-function parseStoredJSON(key, fallback) {
+const savedFavorites = localStorage.getItem("favorites");
 
-    const saved = localStorage.getItem(key);
-
-    if (!saved) {
-        return fallback;
-    }
-
-    try {
-        return JSON.parse(saved);
-    } catch (error) {
-        console.warn(
-            `Kunde inte läsa localStorage: ${key}`,
-            error
-        );
-
-        return fallback;
-    }
+if (savedFavorites) {
+    favorites = JSON.parse(savedFavorites);
 }
 
-function initializeCityCollections() {
+let spinHistory = [];
 
-    const savedFavoritesByCity =
-        parseStoredJSON(
-            "favoritesByCity",
-            null
-        );
+const savedSpinHistory = localStorage.getItem("spinHistory");
 
-    const savedHistoryByCity =
-        parseStoredJSON(
-            "spinHistoryByCity",
-            null
-        );
-
-    // Om den nya strukturen redan finns använder vi den.
-    // Annars migrerar vi den gamla globala listan till Stockholm.
-    if (
-        savedFavoritesByCity &&
-        typeof savedFavoritesByCity === "object" &&
-        !Array.isArray(savedFavoritesByCity)
-    ) {
-        favoritesByCity = savedFavoritesByCity;
-    } else {
-
-        const oldFavorites =
-            parseStoredJSON("favorites", []);
-
-        favoritesByCity = {
-            stockholm: Array.isArray(oldFavorites)
-                ? oldFavorites
-                : []
-        };
-    }
-
-    if (
-        savedHistoryByCity &&
-        typeof savedHistoryByCity === "object" &&
-        !Array.isArray(savedHistoryByCity)
-    ) {
-        historyByCity = savedHistoryByCity;
-    } else {
-
-        const oldHistory =
-            parseStoredJSON("spinHistory", []);
-
-        historyByCity = {
-            stockholm: Array.isArray(oldHistory)
-                ? oldHistory
-                : []
-        };
-    }
-
-    // Se till att varje stad alltid har en array.
-    Object.keys(CITIES).forEach(cityId => {
-
-        if (!Array.isArray(favoritesByCity[cityId])) {
-            favoritesByCity[cityId] = [];
-        }
-
-        if (!Array.isArray(historyByCity[cityId])) {
-            historyByCity[cityId] = [];
-        }
-
-    });
-
-    // Spara den nya strukturen direkt.
-    localStorage.setItem(
-        "favoritesByCity",
-        JSON.stringify(favoritesByCity)
-    );
-
-    localStorage.setItem(
-        "spinHistoryByCity",
-        JSON.stringify(historyByCity)
-    );
+if (savedSpinHistory) {
+    spinHistory = JSON.parse(savedSpinHistory);
 }
-
-function syncCurrentCityCollections() {
-
-    if (!Array.isArray(favoritesByCity[currentCity])) {
-        favoritesByCity[currentCity] = [];
-    }
-
-    if (!Array.isArray(historyByCity[currentCity])) {
-        historyByCity[currentCity] = [];
-    }
-
-    // Resten av appen använder fortfarande dessa två variabler.
-    // De pekar nu på den aktuella stadens listor.
-    favorites = favoritesByCity[currentCity];
-    spinHistory = historyByCity[currentCity];
-}
-
-function saveFavorites() {
-
-    favoritesByCity[currentCity] = favorites;
-
-    localStorage.setItem(
-        "favoritesByCity",
-        JSON.stringify(favoritesByCity)
-    );
-}
-
-function saveSpinHistory() {
-
-    historyByCity[currentCity] = spinHistory;
-
-    localStorage.setItem(
-        "spinHistoryByCity",
-        JSON.stringify(historyByCity)
-    );
-}
-
-initializeCityCollections();
-syncCurrentCityCollections();
 
 // ===============================
 // HTML-element
@@ -289,20 +80,17 @@ const priceBillig = document.getElementById("priceBillig");
 const priceMellan = document.getElementById("priceMellan");
 const priceDyr = document.getElementById("priceDyr");
 
-const districtFilters =
-    document.getElementById("districtFilters");
+const districtSodermalm = document.getElementById("districtSodermalm");
+const districtNorrmalm = document.getElementById("districtNorrmalm");
+const districtVasastan = document.getElementById("districtVasastan");
+const districtOstermalm = document.getElementById("districtOstermalm");
+const districtKungsholmen = document.getElementById("districtKungsholmen");
+const districtGamlaStan = document.getElementById("districtGamlaStan");
 
 const favoritesList =
     document.getElementById("favoritesList");
 
-    
-const citySelect =
-    document.getElementById("citySelect");
-
-const citySubtitle =
-    document.getElementById("citySubtitle");
-
-renderFavorites();
+    renderFavorites();
 // ===============================
 // Event Listeners
 // ===============================
@@ -335,157 +123,30 @@ document
 // Ladda venues
 // ===============================
 
-async function loadCity(cityId, initialize = false) {
+fetch("data/venuesStockholm.json")
+.then(response => response.json())
+.then(venueData => {
 
-    const city = CITIES[cityId];
+    venues = venueData.map(venue => ({
+        ...venue,
 
-    if (!city) {
-        console.error("Okänd stad:", cityId);
-        return;
-    }
+        kategorier:
+            Array.isArray(venue.kategorier)
+                ? venue.kategorier
+                : [],
 
-    try {
+        tags:
+            Array.isArray(venue.tags)
+                ? venue.tags
+                : []
+    }));
 
-        const response = await fetch(city.fil);
+    initSpinner();
 
-        if (!response.ok) {
-            throw new Error(`Kunde inte ladda ${city.fil}`);
-        }
+    console.log("Venue-fil inläst!");
+    console.log(venues);
 
-        const venueData = await response.json();
-
-        venues = venueData.map(venue => ({
-            ...venue,
-            stad: cityId,
-
-            kategorier:
-                Array.isArray(venue.kategorier)
-                    ? venue.kategorier
-                    : [],
-
-            tags:
-                Array.isArray(venue.tags)
-                    ? venue.tags
-                    : []
-        }));
-
-        currentCity = cityId;
-
-        localStorage.setItem("currentCity", currentCity);
-
-        syncCurrentCityCollections();
-
-        updateCityUI();
-        resetDistrictFilters();
-
-        if (initialize) {
-            initSpinner();
-        } else {
-            hasSpun = false;
-            buttonMode = "spin";
-            randomButton.textContent = "SNURRA";
-            refreshSpinner();
-            updateActiveFilters();
-        }
-
-        console.log(`Venue-fil inläst: ${city.namn}`);
-        console.log(venues);
-
-    } catch (error) {
-
-        console.error(
-            "Kunde inte ladda stadens venue-fil:",
-            error
-        );
-
-    }
-}
-
-function updateCityUI() {
-
-    const city = CITIES[currentCity];
-
-    if (!city) {
-        return;
-    }
-
-    citySubtitle.textContent = city.namn;
-    citySelect.value = currentCity;
-}
-
-function getAvailableDistricts() {
-
-    if (currentCity === "stockholm") {
-        return STOCKHOLM_DISTRICTS.filter(district =>
-            venues.some(
-                venue => venue.stadsdel === district
-            )
-        );
-    }
-
-    return [...new Set(
-        venues
-            .map(venue => venue.stadsdel)
-            .filter(Boolean)
-    )].sort((a, b) =>
-        formatDistrictName(a).localeCompare(
-            formatDistrictName(b),
-            "sv"
-        )
-    );
-}
-
-function renderDistrictFilters() {
-
-    if (!districtFilters) {
-        return;
-    }
-
-    const districts =
-        getAvailableDistricts();
-
-    districtFilters.innerHTML = "";
-
-    districts.forEach(district => {
-
-        const label =
-            document.createElement("label");
-
-        const checkbox =
-            document.createElement("input");
-
-        checkbox.type = "checkbox";
-        checkbox.value = district;
-
-        label.appendChild(checkbox);
-
-        label.appendChild(
-            document.createTextNode(
-                ` ${formatDistrictName(district)}`
-            )
-        );
-
-        districtFilters.appendChild(label);
-
-    });
-}
-
-function resetDistrictFilters() {
-
-    if (!districtFilters) {
-        return;
-    }
-
-    renderDistrictFilters();
-
-    districtFilters
-        .querySelectorAll('input[type="checkbox"]')
-        .forEach(checkbox => {
-            checkbox.checked = false;
-        });
-}
-
-loadCity(currentCity, true);
+});
 
 
 // ===============================
@@ -565,6 +226,19 @@ function startApp() {
         showView("homeView");
 
     },400);
+}
+
+function formatDistrict(district) {
+
+    const districts = {
+        sodermalm: "Södermalm",
+        ostermalm: "Östermalm",
+        norrmalm: "Norrmalm",
+        vasastan: "Vasastan",
+        kungsholmen: "Kungsholmen"
+    };
+
+    return districts[district] || capitalize(district);
 }
 
 function clearWinnerEffects() {
@@ -685,8 +359,6 @@ function showFilter() {
 
 function showFavorites() {
 
-    renderFavorites();
-
     showView("favoritesView");
 
 }
@@ -716,9 +388,8 @@ function showHome() {
 
 function showSettings() {
 
-    updateCityUI();
-
     showView("settingsView");
+
 }
 
 function showAbout() {
@@ -797,7 +468,7 @@ document.getElementById("venueDescription").innerHTML = `
     <div class="infoRow venueTypePrice">
 
     <strong>
-        ${currentVenue.pris === "billigt" ? "💰" : currentVenue.pris === "mellan" ? "💰💰" : "💰💰💰"} ${capitalize(currentVenue.pris)}
+        ${capitalize(currentVenue.pris)}
         ·
         ${(currentVenue.kategorier || [])
             .map(kategori => capitalize(kategori))
@@ -809,7 +480,7 @@ document.getElementById("venueDescription").innerHTML = `
 
 <div class="infoRow venueDistrict">
 
-        <strong>${capitalize(currentVenue.stadsdel)}</strong>
+        <strong>${formatDistrict(currentVenue.stadsdel)}</strong>
 
     </div>
 
@@ -819,8 +490,8 @@ document.getElementById("venueDescription").innerHTML = `
 
 <div class="infoRow venueOpeningHours">
 
-        <strong>Öppettider: Ingen information tillgänglig.</strong>
-                
+        <p>Öppettider: Ingen information tillgänglig just nu.</p>
+        <br>        
 </div>
 
 `;
@@ -857,7 +528,10 @@ venueFavoriteButton.onclick = () => {
 
     }
 
-    saveFavorites();
+    localStorage.setItem(
+    "favorites",
+    JSON.stringify(favorites)
+);
 
 renderFavorites();
 
@@ -904,13 +578,16 @@ function getSelectedFilters() {
 
         ].filter(Boolean),
 
-        districts: Array.from(
-            districtFilters.querySelectorAll(
-                'input[type="checkbox"]:checked'
-            )
-        ).map(
-            checkbox => checkbox.value
-        )
+        districts: [
+
+            districtSodermalm.checked ? "sodermalm" : null,
+            districtNorrmalm.checked ? "norrmalm" : null,
+            districtVasastan.checked ? "vasastan" : null,
+            districtOstermalm.checked ? "ostermalm" : null,
+            districtKungsholmen.checked ? "kungsholmen" : null,
+            districtGamlaStan.checked ? "gamla_stan" : null
+
+        ].filter(Boolean)
 
     };
 
@@ -979,7 +656,10 @@ result.addEventListener("click", () => {
 
 function renderFavorites() {
 
-    saveFavorites();
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
 
     favoritesList.innerHTML = "";
 
@@ -1056,7 +736,10 @@ function addToHistory(venue) {
     spinHistory = spinHistory.slice(0, 20);
 
     // Spara
-    saveSpinHistory();
+    localStorage.setItem(
+        "spinHistory",
+        JSON.stringify(spinHistory)
+    );
 
 }
 
@@ -1065,26 +748,6 @@ function addToHistory(venue) {
 // ===============================
 
 
-
-// Stad
-// ===============================
-
-citySelect.addEventListener("change", async () => {
-
-    await loadCity(
-        citySelect.value,
-        false
-    );
-
-    if (
-        document
-            .getElementById("favoritesView")
-            .classList.contains("active")
-    ) {
-        renderFavorites();
-    }
-
-});
 
 // Slumpa
 // randomButton.addEventListener("click", randomVenue);
@@ -1204,7 +867,10 @@ favoriteButton.addEventListener("click", function (event) {
 
     }
 
-    saveFavorites();
+    localStorage.setItem(
+        "favorites",
+        JSON.stringify(favorites)
+    );
 
     renderFavorites();
     renderHistory();
@@ -1219,8 +885,6 @@ favoriteButton.addEventListener("click", function (event) {
     });
 
 }
-
-updateCityUI();
 
 playSplashScreen();
 

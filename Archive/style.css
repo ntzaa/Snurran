@@ -714,7 +714,7 @@ button:hover{
 
     color:white;
 
-    margin-bottom: 4px;
+    margin-bottom: 24px;
 }
 
 #venueDescription {
@@ -744,7 +744,7 @@ button:hover{
 
 .venueOpeningHours {
     margin-top: 40px;
-    color:rgba(221, 152, 48, 0.249);
+    color:rgb(221, 152, 48);
 }
 
 
@@ -967,47 +967,4 @@ button:hover{
     font-size: 14px;
 
     font-weight: 600;
-}
-
-/* ===============================
-   STAD / INSTÄLLNINGAR
-   =============================== */
-
-.settingsCard h3{
-    margin-bottom:10px;
-}
-
-.settingsLabel{
-    display:block;
-    color:#9A9A9A;
-    font-size:16px;
-    margin-bottom:14px;
-}
-
-.citySelect{
-    width:100%;
-    padding:14px 16px;
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:12px;
-    background:#141414;
-    color:#F5F5F5;
-    font-family:inherit;
-    font-size:18px;
-    cursor:pointer;
-}
-
-.citySelect:focus{
-    outline:none;
-    border-color:#D4AF37;
-}
-
-
-/* ===============================
-   DYNAMISKA STADSDELSFILTER
-   =============================== */
-
-#districtFilters{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
 }

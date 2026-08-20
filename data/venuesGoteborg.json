@@ -1,0 +1,181 @@
+[
+  {
+    "id": 1001,
+    "slug": "dansken",
+    "namn": "Dansken",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "pub",
+      "ölbar"
+    ],
+    "pris": "billig",
+    "stadsdel": "linne",
+    "adress": "Andra Långgatan 8",
+    "mapsQuery": "Dansken Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1002,
+    "slug": "jerntorgets-brygghus",
+    "namn": "Jerntorgets Brygghus",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "pub",
+      "ölbar"
+    ],
+    "pris": "billig",
+    "stadsdel": "linne",
+    "adress": "Järntorget 4",
+    "mapsQuery": "Jerntorgets Brygghus Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1003,
+    "slug": "brewers-beer-bar-tredje-langgatan",
+    "namn": "Brewers Beer Bar Tredje Långgatan",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "ölbar",
+      "provning"
+    ],
+    "pris": "mellan",
+    "stadsdel": "linne",
+    "adress": "Tredje Långgatan 8",
+    "mapsQuery": "Brewers Beer Bar Tredje Långgatan Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1004,
+    "slug": "taverna-averna",
+    "namn": "Taverna Averna",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "cocktailbar",
+      "vinbar",
+      "uteservering"
+    ],
+    "pris": "mellan",
+    "stadsdel": "linne",
+    "adress": "Tredje Långgatan 7",
+    "mapsQuery": "Taverna Averna Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1005,
+    "slug": "sejdeln",
+    "namn": "Sejdeln",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "pub",
+      "ölbar"
+    ],
+    "pris": "billig",
+    "stadsdel": "linne",
+    "adress": "Andra Långgatan 28",
+    "mapsQuery": "Sejdeln Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1006,
+    "slug": "the-bishops-arms-jarntorget",
+    "namn": "The Bishops Arms Järntorget",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "pub",
+      "ölbar"
+    ],
+    "pris": "mellan",
+    "stadsdel": "linne",
+    "adress": "Järntorget 6",
+    "mapsQuery": "The Bishops Arms Järntorget Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1007,
+    "slug": "9ans-olhall",
+    "namn": "9:ans Ölhall",
+    "kategorier": [
+      "bar"
+    ],
+    "tags": [
+      "ölbar",
+      "pub"
+    ],
+    "pris": "billig",
+    "stadsdel": "linne",
+    "adress": "Andra Långgatan 9",
+    "mapsQuery": "9:ans Ölhall Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1008,
+    "slug": "kings-head",
+    "namn": "Kings Head",
+    "kategorier": [
+      "bar"
+    ],
+    "tags": [
+      "pub",
+      "ölbar"
+    ],
+    "pris": "billig",
+    "stadsdel": "linne",
+    "adress": "Andra Långgatan 32",
+    "mapsQuery": "Kings Head Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1009,
+    "slug": "puta-madre",
+    "namn": "Puta Madre",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "cocktailbar",
+      "uteservering"
+    ],
+    "pris": "mellan",
+    "stadsdel": "centrum",
+    "adress": "Magasinsgatan 3",
+    "mapsQuery": "Puta Madre Göteborg",
+    "koordinater": null
+  },
+  {
+    "id": 1010,
+    "slug": "olrepubliken",
+    "namn": "Ölrepubliken",
+    "kategorier": [
+      "bar",
+      "restaurang"
+    ],
+    "tags": [
+      "ölbar",
+      "pub"
+    ],
+    "pris": "mellan",
+    "stadsdel": "centrum",
+    "adress": "Kronhusgatan 2B",
+    "mapsQuery": "Ölrepubliken Göteborg",
+    "koordinater": null
+  }
+]

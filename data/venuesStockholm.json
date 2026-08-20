@@ -2717,7 +2717,7 @@
     "namn": "Brasserie Hutton",
     "kategorier": ["bar", "restaurang"],
     "tags": ["hotellbar", "takbar", "utsikt"],
-    "pris": "dyr",
+    "pris": "mellan",
     "stadsdel": "gamla_stan",
     "adress": "Riddarholmskajen 4",
     "mapsQuery": "Brasserie Hutton Mälardrottningen Stockholm",
