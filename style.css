@@ -50,6 +50,10 @@ h1{
     font-size:20px;
 }
 
+#citySubtitle {
+    margin-top: -22px;
+}
+
 .display{
 
     width:100%;
