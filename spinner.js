@@ -35,6 +35,9 @@ let hasSpun = false;
 
 let buttonMode = "spin";
 
+let activeTransitionHandler = null;
+let buttonRevealTimeout = null;
+
 
 // ===============================
 // Shuffle
@@ -634,7 +637,105 @@ function initSpinner() {
 
     spinnerOrder = [];
 }
+// ===============================
+// Stoppa pågående snurr
+// ===============================
 
+function stopSpinner() {
+
+    const spinnerList =
+        document.getElementById("spinnerList");
+
+    const spinnerWindow =
+        document.getElementById("spinnerWindow");
+
+
+    // Avbryt eventuell transitionend-lyssnare
+
+    if (
+        spinnerList &&
+        activeTransitionHandler
+    ) {
+
+        spinnerList.removeEventListener(
+            "transitionend",
+            activeTransitionHandler
+        );
+
+        activeTransitionHandler = null;
+    }
+
+
+    // Avbryt eventuell väntande knappändring
+
+    if (buttonRevealTimeout) {
+
+        clearTimeout(buttonRevealTimeout);
+
+        buttonRevealTimeout = null;
+    }
+
+
+    // Stoppa själva animationen
+
+    if (spinnerList) {
+
+        spinnerList.style.transition =
+            "none";
+
+        spinnerList.style.transform =
+            "translateY(0)";
+    }
+
+
+    // Ta bort eventuell vinnar-animation
+
+    if (spinnerList) {
+
+        spinnerList
+            .querySelectorAll(".winnerCelebrate")
+            .forEach(item => {
+
+                item.classList.remove(
+                    "winnerCelebrate"
+                );
+
+            });
+    }
+
+
+    if (spinnerWindow) {
+
+        spinnerWindow.classList.remove(
+            "celebrate"
+        );
+    }
+
+
+    // Återställ spinnerns state
+
+    spinning = false;
+
+    hasSpun = false;
+
+    buttonMode = "spin";
+
+    currentVenue = null;
+
+    currentOffset = 0;
+
+    currentIndex = 0;
+
+
+    // Återställ knappen
+
+    randomButton.textContent =
+        "SNURRA";
+
+    randomButton.classList.remove(
+        "buttonHidden"
+    );
+}
 
 // ===============================
 // Toggle SNURRA / VISA STÄLLET
@@ -693,69 +794,69 @@ function toggleSpin() {
     spinnerList.ontransitionend = null;
 
 
-    spinnerList.addEventListener(
-        "transitionend",
-        function handleTransition(event) {
+ activeTransitionHandler =
+    function handleTransition(event) {
 
-            // Vi bryr oss bara om transform.
-            if (
-                event.propertyName !==
-                "transform"
-            ) {
-                return;
-            }
+        // Vi bryr oss bara om transform.
+        if (
+            event.propertyName !==
+            "transform"
+        ) {
+            return;
+        }
 
 
-            spinnerList.removeEventListener(
-                "transitionend",
-                handleTransition
+        spinnerList.removeEventListener(
+            "transitionend",
+            activeTransitionHandler
+        );
+
+
+        // ===============================
+        // Animation klar
+        // ===============================
+
+        spinning = false;
+
+
+        const winnerItems =
+            spinnerList.querySelectorAll(
+                ".spinnerItem"
             );
 
 
-            // ===============================
-            // Animation klar
-            // ===============================
-
-            spinning = false;
+        const winnerItem =
+            winnerItems[WINNER_INDEX];
 
 
-            const winnerItems =
-                spinnerList.querySelectorAll(
-                    ".spinnerItem"
-                );
+        if (winnerItem) {
+
+            winnerItem.classList.add(
+                "winnerCelebrate"
+            );
+        }
 
 
-            const winnerItem =
-                winnerItems[WINNER_INDEX];
+        const spinnerWindow =
+            document.getElementById(
+                "spinnerWindow"
+            );
 
 
-            if (winnerItem) {
+        if (spinnerWindow) {
 
-                winnerItem.classList.add(
-                    "winnerCelebrate"
-                );
-            }
-
-
-            const spinnerWindow =
-                document.getElementById(
-                    "spinnerWindow"
-                );
+            spinnerWindow.classList.add(
+                "celebrate"
+            );
+        }
 
 
-            if (spinnerWindow) {
+        // ===============================
+        // Byt knapp till:
+        // VISA STÄLLET
+        // ===============================
 
-                spinnerWindow.classList.add(
-                    "celebrate"
-                );
-            }
-
-
-            // ===============================
-            // Byt knapp till:
-            // VISA STÄLLET
-            // ===============================
-
+        buttonRevealTimeout =
             setTimeout(() => {
 
                 buttonMode = "venue";
@@ -767,10 +868,17 @@ function toggleSpin() {
                     "buttonHidden"
                 );
 
+                buttonRevealTimeout = null;
+
             }, 1000);
 
-        }
-    );
+    };
+
+
+spinnerList.addEventListener(
+    "transitionend",
+    activeTransitionHandler
+);
 }
 
 
@@ -793,6 +901,9 @@ window.buildSpinner =
 
 window.toggleSpin =
     toggleSpin;
+
+window.stopSpinner =
+    stopSpinner;
 
 window.randomVenue =
     randomVenue;

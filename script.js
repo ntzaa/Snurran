@@ -609,6 +609,8 @@ function clearWinnerEffects() {
 
 function showView(viewId) {
 
+    stopSpinner();
+
     const views = document.querySelectorAll(".view");
 
     views.forEach(view => {
