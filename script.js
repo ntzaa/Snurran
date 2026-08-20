@@ -797,7 +797,7 @@ document.getElementById("venueDescription").innerHTML = `
     <div class="infoRow venueTypePrice">
 
     <strong>
-        ${currentVenue.pris === "billigt" ? "💰" : currentVenue.pris === "mellan" ? "💰💰" : "💰💰💰"} ${capitalize(currentVenue.pris)}
+        ${["billig", "billigt"].includes(currentVenue.pris.toLowerCase()) ? "💰" : currentVenue.pris.toLowerCase() === "mellan" ? "💰💰" : "💰💰💰"} ${capitalize(currentVenue.pris)}
         ·
         ${(currentVenue.kategorier || [])
             .map(kategori => capitalize(kategori))
@@ -809,7 +809,13 @@ document.getElementById("venueDescription").innerHTML = `
 
 <div class="infoRow venueDistrict">
 
-        <strong>${capitalize(currentVenue.stadsdel)}</strong>
+        <strong>${
+    currentVenue.stadsdel === "sodermalm"
+        ? "Södermalm"
+        : currentVenue.stadsdel === "ostermalm"
+            ? "Östermalm"
+            : capitalize(currentVenue.stadsdel)
+}</strong>
 
     </div>
 
