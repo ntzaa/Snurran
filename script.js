@@ -587,6 +587,10 @@ function startApp() {
 
         intro.style.display = "none";
 
+        document
+            .getElementById("bottomNav")
+            .classList.remove("hidden");
+
         showView("homeView");
 
     },400);
@@ -625,6 +629,64 @@ function showView(viewId) {
 
     clearWinnerEffects();
 
+        // ===============================
+    // Aktiv bottom navigation
+    // ===============================
+
+    const navButtons =
+        document.querySelectorAll("#bottomNav > div");
+
+    navButtons.forEach(button => {
+
+        button.classList.remove("active");
+
+    });
+
+
+    if (
+        viewId === "homeView"
+    ) {
+
+        document
+            .getElementById("homeButton")
+            .classList.add("active");
+
+    }
+
+
+    if (
+        viewId === "filterView"
+    ) {
+
+        document
+            .getElementById("filterButton")
+            .classList.add("active");
+
+    }
+
+
+    if (
+        viewId === "favoritesView" ||
+        viewId === "venueHistoryView"
+    ) {
+
+        document
+            .getElementById("favoritesButton")
+            .classList.add("active");
+
+    }
+
+
+    if (
+        viewId === "settingsView" ||
+        viewId === "aboutView"
+    ) {
+
+        document
+            .getElementById("settingsButton")
+            .classList.add("active");
+
+    }
 
     if (viewId === "filterView") {
 
