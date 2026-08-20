@@ -825,7 +825,7 @@ document.getElementById("venueDescription").innerHTML = `
 
 <div class="infoRow venueOpeningHours">
 
-        <strong>Öppettider: Ingen information tillgänglig.</strong>
+        <p>Öppettider: Ingen information tillgänglig.</p>
                 
 </div>
 
