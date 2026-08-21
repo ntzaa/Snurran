@@ -720,8 +720,6 @@ function stopSpinner() {
 
     buttonMode = "spin";
 
-    currentVenue = null;
-
     currentOffset = 0;
 
     currentIndex = 0;

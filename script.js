@@ -326,6 +326,20 @@ const citySelect =
 const citySubtitle =
     document.getElementById("citySubtitle");
 
+const filterToggle =
+    document
+    .querySelectorAll(".filterCard .filterToggle")
+    .forEach(toggle => {
+
+        toggle.addEventListener(
+            "click",
+            () => toggleFilterCategory(toggle)
+        );
+
+    });
+
+
+
 renderFavorites();
 // ===============================
 // Event Listeners
@@ -881,6 +895,99 @@ function formatTag(tag) {
     return tagNames[tag] || capitalize(tag);
 }
 
+function toggleFilterCategory(toggle) {
+
+    const card =
+        toggle.closest(".filterCard");
+
+    if (!card) {
+        return;
+    }
+
+
+    const options =
+        card.querySelector(".filterOptions");
+
+    const arrow =
+        toggle.querySelector(".filterArrow");
+
+
+    if (!options || !arrow) {
+        return;
+    }
+
+
+    const isCollapsed =
+        options.classList.contains("collapsed");
+
+
+    // ===============================
+    // ÖPPNA
+    // ===============================
+
+    if (isCollapsed) {
+
+        options.classList.remove("collapsed");
+
+        const height =
+            options.scrollHeight;
+
+        options.style.height =
+            height + "px";
+
+        arrow.textContent = "⌄";
+
+
+        options.addEventListener(
+            "transitionend",
+            function handleOpen(event) {
+
+                if (event.propertyName !== "height") {
+                    return;
+                }
+
+                options.style.height = "auto";
+
+                options.removeEventListener(
+                    "transitionend",
+                    handleOpen
+                );
+
+            }
+        );
+
+        return;
+    }
+
+
+    // ===============================
+    // STÄNG
+    // ===============================
+
+    const height =
+        options.scrollHeight;
+
+    options.style.height =
+        height + "px";
+
+
+    requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+
+            options.classList.add("collapsed");
+
+            options.style.height =
+                "0px";
+
+        });
+
+    });
+
+
+    arrow.textContent = "›";
+}
+
 function showVenue() {
 
     if (currentVenue === null)
@@ -959,41 +1066,69 @@ document.getElementById("venueDescription").innerHTML = `
 const venueFavoriteButton =
     document.getElementById("venueFavoriteButton");
 
-const isFavorite =
-    favorites.some(favorite =>
-        favorite.id === currentVenue.id
-    );
 
-venueFavoriteButton.textContent =
-    isFavorite ? "❤️" : "🤍";
+if (venueFavoriteButton) {
 
-venueFavoriteButton.onclick = () => {
+    // ===============================
+    // Visa aktuellt favoritläge
+    // ===============================
 
-    const isFavorite =
+    venueFavoriteButton.textContent =
         favorites.some(favorite =>
             favorite.id === currentVenue.id
-        );
+        )
+            ? "❤️"
+            : "🤍";
 
-    if (isFavorite) {
 
-        favorites = favorites.filter(favorite =>
-            favorite.id !== currentVenue.id
-        );
+    // ===============================
+    // Favoritknapp
+    // ===============================
 
-    } else {
+    venueFavoriteButton.onclick =
+        function (event) {
 
-        favorites.unshift(currentVenue);
+            console.log("FAVORITKNAPP KLICKAD");
 
-    }
+            event.stopPropagation();
 
-    saveFavorites();
 
-renderFavorites();
+            const isFavorite =
+                favorites.some(favorite =>
+                    favorite.id === currentVenue.id
+                );
 
-venueFavoriteButton.textContent =
-    isFavorite ? "🤍" : "❤️";
 
-};
+            if (isFavorite) {
+
+                favorites =
+                    favorites.filter(favorite =>
+                        favorite.id !== currentVenue.id
+                    );
+
+            } else {
+
+                favorites.unshift(currentVenue);
+
+            }
+
+
+            saveFavorites();
+
+            renderFavorites();
+
+
+            // Läs det NYA läget
+            venueFavoriteButton.textContent =
+                favorites.some(favorite =>
+                    favorite.id === currentVenue.id
+                )
+                    ? "❤️"
+                    : "🤍";
+
+        };
+
+}
 
 showView("venueView");
 
