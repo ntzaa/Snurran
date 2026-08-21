@@ -712,6 +712,8 @@ function updateActiveFilters() {
         activeFiltersElement.textContent =
             "Endast favoritställen";
 
+        updateVenueCount();
+
         return;
     }
 
@@ -728,6 +730,8 @@ function updateActiveFilters() {
 
         activeFiltersElement.textContent = "";
 
+        updateVenueCount();
+
         return;
     }
 
@@ -735,6 +739,8 @@ function updateActiveFilters() {
         activeFilters
             .map(filter => capitalize(filter))
             .join(" · ");
+
+    updateVenueCount();
 }
 
 
@@ -1331,6 +1337,22 @@ favoriteButton.addEventListener("click", function (event) {
 
     });
 
+}
+
+function updateVenueCount() {
+
+    const venueCount =
+        document.getElementById("venueCount");
+
+    if (!venueCount) {
+        return;
+    }
+
+    const filteredVenues =
+        getFilteredVenues();
+
+    venueCount.textContent =
+        `${filteredVenues.length} ställen`;
 }
 
 updateCityUI();

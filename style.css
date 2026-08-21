@@ -110,6 +110,20 @@ h1{
     font-weight:700;
 }
 
+
+#venueCount {
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    color: #777;
+
+    text-align: center;
+}
+
+
 button{
 
     width:100%;

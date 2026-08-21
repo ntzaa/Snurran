@@ -604,7 +604,7 @@ if (!winner) {
         requestAnimationFrame(() => {
 
             spinnerList.style.transition =
-                "transform 7s cubic-bezier(.05,.85,.45,1)";
+                "transform 6s cubic-bezier(.05,1,.5,1.011)";
 
             spinnerList.style.transform =
                 `translateY(-${targetOffset}px)`;
