@@ -59,15 +59,38 @@ h1{
     width:100%;
     max-width:600px;
 
-    background:#343433;
+background:
+        linear-gradient(
+            180deg,
+            #292825 0%,
+            #242321 35%,
+            #20201f 65%,
+            #1b1b1a 100%
+        );
+
+border: 1px solid rgba(245,174,53,.20);
+
+    box-shadow:
+
+        /* Yttre skugga */
+        0 14px 30px rgba(0,0,0,.40),
+
+        /* Ljus kant upptill */
+        inset 0 1px 1px rgba(255, 255, 255, 0.1),
+
+        /* Mörk kant undertill */
+        inset 0 -2px 2px rgba(0,0,0,.55),
+
+        /* Svag guldreflektion längs kanten */
+        inset 0 0 0 1px rgba(245,174,53,.05);
+
 
     border-radius:110px;
 
     padding:10px;
 
-    margin:0 auto 20px;
+    margin:0 auto 80px;
 
-    border:1px solid #333;
 
     min-height:160px;
 
@@ -77,29 +100,94 @@ h1{
 
     align-items:center;
 
-    box-shadow:0 0 25px rgba(0,0,0,.35);
+
 
 }
 
-.winnerArrow{
 
-    width:0;
-    height:0;
+/* ===============================
+    SPINNER WINDOW
+================================ */
 
-    border-top:24px solid transparent;
-    border-bottom:24px solid transparent;
-
+#spinnerWindow {
+    position: relative;
 }
-.winnerArrow.left{
 
-    border-right:32px solid #1d1d1de2;
+/* ===============================
+    PILAR
+================================ */
 
+.winnerArrow {
+
+    width: 0;
+    height: 0;
+
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+
+    position: relative;
+    z-index: 30;
 }
-.winnerArrow.right{
 
-    border-left:32px solid #1d1d1de2;
 
+.winnerArrow::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 36px;
+    height: 5px;
+
+    top: -2.5px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffd477 0%,
+            #f5ae35 45%,
+            #c98520 100%
+        );
+
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.45),
+        0 -1px 1px rgba(255,255,255,.25);
+
+    z-index: 50;
+
+    pointer-events: none;
 }
+
+.winnerArrow.left {
+
+    border-right: 32px solid #ae8949;
+
+    filter:
+        drop-shadow(0 1px 1px rgba(0,0,0,.45))
+        drop-shadow(0 -1px 1px rgba(255,255,255,.18));
+}
+
+.winnerArrow.left::after {
+
+    left: 0;
+}
+
+.winnerArrow.right {
+
+    border-left: 32px solid #ae8949;
+
+    filter:
+        drop-shadow(0 1px 1px rgba(0,0,0,.45))
+        drop-shadow(0 -1px 1px rgba(255,255,255,.18));
+}
+
+.winnerArrow.right::after {
+
+    right: 0;
+}
+
 
 #resultat{
 
