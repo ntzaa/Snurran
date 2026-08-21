@@ -38,6 +38,16 @@ let buttonMode = "spin";
 let activeTransitionHandler = null;
 let buttonRevealTimeout = null;
 
+// ===============================
+// Idle touch-interaktion
+// ===============================
+
+let idlePointerActive = false;
+let idlePointerStartY = 0;
+let idlePointerOffset = 0;
+
+const IDLE_DRAG_LIMIT = 140;
+const IDLE_DRAG_RESISTANCE = 0.55;
 
 // ===============================
 // Shuffle
@@ -256,6 +266,162 @@ function buildSpinnerSequence(names, winnerName = null) {
     spinnerList.classList.remove("spinnerIdle");
 }
 
+// ===============================
+// Peta på idle-spinnern
+// ===============================
+
+function initIdleInteraction() {
+
+    const spinnerWindow =
+        document.getElementById("spinnerWindow");
+
+    const spinnerList =
+        document.getElementById("spinnerList");
+
+
+    if (!spinnerWindow || !spinnerList) {
+        return;
+    }
+
+
+    // ===============================
+    // Börja dra
+    // ===============================
+
+    spinnerWindow.addEventListener(
+        "pointerdown",
+        function(event) {
+
+            // Den riktiga snurrningen
+            // ska alltid ha företräde.
+            if (spinning) {
+                return;
+            }
+
+
+            // Vi vill bara kunna peta
+            // när spinnern är i sitt
+            // vanliga SNURRA-läge.
+            if (buttonMode !== "spin") {
+                return;
+            }
+
+
+            idlePointerActive = true;
+
+            idlePointerStartY =
+                event.clientY;
+
+            idlePointerOffset = 0;
+
+
+            spinnerList.style.transition =
+                "none";
+
+
+            spinnerWindow.setPointerCapture(
+                event.pointerId
+            );
+
+        }
+    );
+
+
+    // ===============================
+    // Dra
+    // ===============================
+
+    spinnerWindow.addEventListener(
+        "pointermove",
+        function(event) {
+
+            if (!idlePointerActive) {
+                return;
+            }
+
+
+            const distance =
+    event.clientY -
+    idlePointerStartY;
+
+
+const resistedDistance =
+    distance * IDLE_DRAG_RESISTANCE;
+
+
+idlePointerOffset =
+    Math.max(
+        -IDLE_DRAG_LIMIT * IDLE_DRAG_RESISTANCE,
+        Math.min(
+            IDLE_DRAG_LIMIT * IDLE_DRAG_RESISTANCE,
+            resistedDistance
+        )
+    );
+
+
+            spinnerList.style.transform =
+                `translateY(${idlePointerOffset}px)`;
+
+        }
+    );
+
+
+    // ===============================
+    // Släpp
+    // ===============================
+
+    function releaseIdlePointer(event) {
+
+        if (!idlePointerActive) {
+            return;
+        }
+
+
+        idlePointerActive = false;
+
+
+        // ===============================
+        // Fjädring tillbaka
+        // ===============================
+
+        spinnerList.style.transition =
+            "transform .65s cubic-bezier(.16,1.4,.3,1)";
+
+        spinnerList.style.transform =
+            "translateY(0)";
+
+
+        idlePointerOffset = 0;
+
+
+        if (
+            event &&
+            spinnerWindow.hasPointerCapture(
+                event.pointerId
+            )
+        ) {
+
+            spinnerWindow.releasePointerCapture(
+                event.pointerId
+            );
+
+        }
+
+    }
+
+
+    spinnerWindow.addEventListener(
+        "pointerup",
+        releaseIdlePointer
+    );
+
+
+    spinnerWindow.addEventListener(
+        "pointercancel",
+        releaseIdlePointer
+    );
+
+}
 
 // ===============================
 // Filtrering
@@ -636,6 +802,9 @@ function initSpinner() {
     currentVenue = null;
 
     spinnerOrder = [];
+
+    initIdleInteraction();
+
 }
 // ===============================
 // Stoppa pågående snurr

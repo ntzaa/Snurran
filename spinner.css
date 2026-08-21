@@ -265,6 +265,9 @@
 
 /* Animationer */
 
+#spinnerWindow {
+    touch-action: none;
+}
 
 /* Fade-effekter */
 
