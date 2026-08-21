@@ -33,6 +33,8 @@ let currentOffset = 0;
 let spinning = false;
 let hasSpun = false;
 
+let idleInteractionEnabled = true;
+
 let buttonMode = "spin";
 
 let activeTransitionHandler = null;
@@ -294,16 +296,12 @@ function initIdleInteraction() {
 
             // Den riktiga snurrningen
             // ska alltid ha företräde.
-            if (spinning) {
-                return;
-            }
-
-
-            // Vi vill bara kunna peta
-            // när spinnern är i sitt
-            // vanliga SNURRA-läge.
-            if (buttonMode !== "spin") {
-                return;
+            if (
+                spinning ||
+                !idleInteractionEnabled ||
+                buttonMode !== "spin"
+            ) {
+            return;
             }
 
 
@@ -883,6 +881,8 @@ function stopSpinner() {
 
     // Återställ spinnerns state
 
+    idleInteractionEnabled = true;
+
     spinning = false;
 
     hasSpun = false;
@@ -932,6 +932,7 @@ function toggleSpin() {
 
 
     spinning = true;
+    idleInteractionEnabled = false;
 
 
     // ===============================
