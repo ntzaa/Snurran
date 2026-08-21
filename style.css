@@ -1060,15 +1060,14 @@ button:hover{
 }
 
 .venueDistrict {
-    color:rgb(255, 255, 255);
+    color:rgb(221, 152, 48);
     font-size: 18px;
 
 }
 
 .venueAddress {
     margin-top: -22px;
-    color:rgb(255, 255, 255);
-
+    color:rgb(221, 152, 48);
 }
 
 .venueOpeningHours {
